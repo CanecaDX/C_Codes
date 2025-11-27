@@ -20,7 +20,7 @@ void cadastro(int qtd) {
 		printf("Insira id do produto: ");
 		scanf("%d", &esto[i].id);
 		printf("Insira nome do produto: ");
-		scanf(" %s", esto[i].nome);
+		scanf("%s", esto[i].nome);
 		printf("Insira a quantidade do produto: ");
 		scanf("%d", &esto[i].qtd);
 		printf("Insira o preco do produto: ");
