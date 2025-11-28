@@ -1,5 +1,3 @@
-1 Obino bage 100 20 100.00
-2 BaHotel bage 40 30 130.00
-1 1 bage 100 0 100.00
-1 Obino bage 40 29 130.00
-3 goiana bage 20 10 500.00
+1 Obino bage 100 49 20.00
+2 Bahotel bage 60 9 10.00
+3 Copacabana RJ 140 40 500.00
