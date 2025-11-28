@@ -37,26 +37,25 @@ int total = 0;
 
 void insere(int qtd){
     int i = 0;
-    struct aniversario data;
     
     for(i = 0; i<qtd; i++){
         printf("Insira nome do contato: ");
-        scanf("%s", &contatos[i].nome);
+        scanf(" %s", contatos[i].nome);
         printf("\nInsira email do contato: ");
-        scanf("%s", &contatos[i].email);
+        scanf(" %s", contatos[i].email);
         printf("\nInsira os dados de endereco do contato: ");
             printf("\nInserir rua: ");
-            scanf("%s", &contatos[i].endereco1.rua);
+            scanf(" %s", contatos[i].endereco1.rua);
             printf("Inserir numero: ");
             scanf("%d", &contatos[i].endereco1.numero);
             printf("Inserir CEP: ");
             scanf("%d", &contatos[i].endereco1.cep);
             printf("Inserir cidade: ");
-            scanf("%s", &contatos[i].endereco1.cidade);
+            scanf(" %s", contatos[i].endereco1.cidade);
             printf("Inserir estado: ");
-            scanf("%s", &contatos[i].endereco1.estado);
+            scanf(" %s", contatos[i].endereco1.estado);
             printf("Inserir pais: ");
-            scanf("%s", &contatos[i].endereco1.pais);
+            scanf(" %s", contatos[i].endereco1.pais);
         printf("Insira dados de telefone do contato: ");
             printf("\nDDD: ");
             scanf("%d", &contatos[i].telefone1.ddd);
@@ -71,7 +70,7 @@ void insere(int qtd){
             scanf("%d", &contatos[i].data.ano);
     }
     total += qtd;
-    printf("\n contato(s) adicionado(s).\n", qtd);
+    printf("\n contato(s) adicionado(s).\n");
 }
 
 void buscarNome(){

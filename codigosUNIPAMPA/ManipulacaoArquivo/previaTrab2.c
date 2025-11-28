@@ -201,9 +201,9 @@ int main() {
 
     carregarArquivo(); // carrega dados ao iniciar
 
-    int opcao, qtd, bus;
+    int opcao, qtd, bus, i = 1;
 
-    while(1) {
+    while(i != 0) {
         printf("\n1 - Cadastrar novo funcionario.");
         printf("\n2 - Listar todos os funcionarios.");
         printf("\n3 - Buscar por id");
@@ -229,15 +229,16 @@ int main() {
             scanf("%d", &bus);
             busca(bus);
             break;
-		
 		case 4:
 			printf("Insira id do funcionario a ser alterado: ");
 			scanf("%d", &bus);
 			modifica(bus);
+			break;
 		case 5:
-			printf("Insira id do funcionarido a ser removido:: ");
+			printf("Insira id do funcionarido a ser removido: ");
 			scanf("%d", &bus);
 			remover(bus);
+			break;
         case 0:
             printf("Encerrando programa.\n");
             return 0;
@@ -249,5 +250,7 @@ int main() {
 
     return 0;
 }
+
+
 
 
