@@ -1,0 +1,5 @@
+/*6: Alterando Valores em Vetor de Structs com Ponteiros
+Crie uma struct Produto com os campos nome e preco.
+Cadastre 3 produtos. Depois, crie uma função atualizarPreco() que receba um ponteiro para
+struct e aumente o preço em 10%.
+Use ponteiros para passar cada produto para a função e mostrar os preços atualizados.*/

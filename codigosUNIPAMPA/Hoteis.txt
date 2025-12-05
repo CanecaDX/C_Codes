@@ -1,3 +1,0 @@
-1 Obino bage 100 49 20.00
-2 Bahotel bage 60 9 10.00
-3 Copacabana RJ 140 40 500.00
