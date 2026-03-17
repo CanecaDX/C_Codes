@@ -1,3 +1,7 @@
+// Lista 1
+// 17/03/2026
+// Leonardo Manzke (leonardomanzke.aluno@unipampa.edu.br)
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,7 +9,8 @@ int** criaMatriz(int m, int n);
 void leiaMatriz(int **mat, int m, int n);
 int somaMatriz(int **mat, int m, int n);
 int * colunaMat(int **mat, int m, int n, int ncoluna);
-void liberaMatriz(int **mat, int ncoluna);
+void liberaMatriz(int **mat, int *vet);
+void imprimeMatriz(int **mat, int m, int n);
 void imprimeVet (int *vet, int n);
 
 int main(){
@@ -15,6 +20,7 @@ int main(){
 	int *vet = NULL;
 
 	while(i == 0) {
+		printf("\n");
 		printf ("\n1 - Criar matriz.");
 		printf ("\n2 - Ler elementos da matriz.");
 		printf ("\n3 - Soma dos elementos da matriz");
@@ -25,7 +31,7 @@ int main(){
 
 		switch (opcao) {
 		case 1:
-			liberaMatriz(mat, ncoluna);
+			liberaMatriz(mat, vet);
 			printf("\nQuantos numeros deseja inserir na linha? ");
 			scanf("%d", &m);
 			printf("\nQuantos numeros deseja inserir na coluna? ");
@@ -39,20 +45,20 @@ int main(){
 			break;
 		case 3:
 			soma = somaMatriz(mat, m, n);
-			printf("Resultado da soma da matriz: %d", soma);
+			printf("\nResultado da soma da matriz: %d", soma);
 			break;
 		case 4:
-			printf("Qual coluna deseja vizualizar? ");
+			printf("\nQual coluna deseja vizualizar? ");
 			scanf("%d", &ncoluna);
 			vet = colunaMat(mat, m, n , ncoluna);
 			if(vet != NULL) {
 				imprimeVet(vet, m);
 			} else {
-				printf("Nenhuma coluna selecionads (case 4)\n");
+				printf("\nNenhuma coluna selecionads (case 4)");
 			}
 			break;
 		case 0:
-			printf("Encerrando programa.");
+			printf("\nEncerrando programa.");
 			return 0;
 		}
 	}
@@ -60,44 +66,44 @@ int main(){
 	return 0;			
 }
 
-void liberaMatriz(int **mat, int ncoluna) {
+void liberaMatriz(int **mat, int *vet) {
+	 
 	 
 	if(mat != NULL) {
 		free(mat);
+	}
+	
+	if(vet != NULL){
+		free(vet);
 	}
 }
 	
 int** criaMatriz(int m, int n){
 	
-	int i, j;
+	int i;
 	
 	int **mat = (int **)malloc(m * sizeof(int*));
 	for(i = 0; i < m; i++){
 			mat[i] = (int *)malloc(n * sizeof(int));
 	}
-	
-	printf("\nDigite os valores da matriz:\n");
-    for (int i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-            printf("matriz[%d][%d] = ", i, j);
-            scanf("%d", &mat[i][j]);
-        }
-    }
     
     return mat;
 }
+
 
 void leiaMatriz(int **mat, int m, int n){
 	
 	int i, j;
 	
-	printf("\nMatriz digitada:\n");
+	printf("\nDigite os valores da matriz:\n");
     for (i = 0; i < m; i++) {
         for (j = 0; j < n; j++) {
-            printf("%d\t", mat[i][j]);
+            printf("matriz[%d][%d] = ", i, j);
+            scanf("%d", &mat[i][j]);
         }
-        printf("\n");
     }
+	
+	imprimeMatriz(mat, m, n);
 	
 }
 
@@ -109,7 +115,6 @@ int somaMatriz(int **mat, int m, int n){
         for (j = 0; j < n; j++) {
            soma += mat[i][j];
         }
-        printf("\n");
     }
     
     return soma;
@@ -135,6 +140,20 @@ void imprimeVet(int *vet, int n){
 	  for (i = 0; i < n; i++) {
             printf("%d\n", vet[i]);
       }
+}
+
+void imprimeMatriz(int **mat, int m, int n) { 
+	
+	int i, j;
+	
+	printf("\nMatriz digitada:\n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d\t", mat[i][j]);
+        }
+        printf("\n");
+    }
+
 }
 
 
