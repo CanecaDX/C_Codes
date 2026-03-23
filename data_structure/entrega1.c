@@ -72,7 +72,7 @@ void liberaMatriz(int **mat, int *vet) {
 	if(mat != NULL) {
 		free(mat);
 	}
-	
+		
 	if(vet != NULL){
 		free(vet);
 	}
