@@ -1,3 +1,7 @@
+// Entrega 3
+// 09/04/2026
+// Leonardo Manzke, leonardomanzke.aluno@unipampa.edu.br
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,9 +24,11 @@ int main (){
 		printf("\n2_ Vizualizar um produto.");
 		printf("\n3_ Vizualziar todos os produtos");
 		printf("\n4_ Vizualizar balanço geral de produtos");
-		printf("\n5_ Busca por nome");
-		printf("\n6_ Busca por setor");
-		printf("\n7_ Venda");
+		printf("\n5_ Busca por nome.");
+		printf("\n6_ Busca por setor.");
+		printf("\n7_ Venda.");
+		printf("\n8_ Carregar produto por arquivo.");
+		printf("\n9_Gerar arquivo de saída do produtos.");
 		printf("\n------------------------------------");
 		printf("\nInforme a ação desejada: ");
 		scanf("%d", &opcao);
@@ -44,7 +50,7 @@ int main (){
 				exibeTodos(est, produtosCad);
 				break;
 			case 4:
-				total = valorTotal(est, produtosCad);
+				total = valorTotal(est, produtosCad) * produtosCad;
 				printf("Balanço: %d", total);
 				break;
 			case 5:
@@ -64,6 +70,16 @@ int main (){
 				printf("\nQual a quantidade de produtos vendidos? ");
 				scanf("%d", &ele);
 				venda(est, busca, ele, produtosCad);
+				break;
+			case 8:
+				printf("Insira o nome do arquivo a ser lido: ");
+				scanf("%s", busca);
+				carregarArq(est, &produtosCad, busca, prod);
+				break;
+			case 9:
+				printf("Insira o nome do arquivo a ser salvo: ");
+				scanf("%s", busca);
+				salvarArq(est, produtosCad, busca);
 				break;
 		}
 	}

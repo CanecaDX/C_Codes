@@ -20,3 +20,5 @@ int valorTotal(estoque *est, int produtosCad);
 void buscaNome(estoque *est, char nomeProd[15], int produtosCad);
 void buscaSetor(estoque *est, int set, int produtosCad);
 void venda(estoque *est, char busca[15], int ele, int produtosCad);
+void carregarArq(estoque *est, int *pos, char *busca, int prod);
+void salvarArq(estoque *est, int pos, char *nomeArq);

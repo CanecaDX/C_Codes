@@ -13,7 +13,7 @@ void cadastraProduto(estoque *est, int *pos){
 	int setorTemp;
 	
 	printf("Insira o nome do produto: ");
-	scanf("%s", est[*pos].nome);
+	scanf(" %[^\n]", est[*pos].nome);
 	printf("1 - Frios\n");
 	printf("2 - Farinhas\n");
 	printf("3 - Pereciveis\n");
@@ -87,8 +87,8 @@ void exibeTodos(estoque *est, int pos){
 int valorTotal(estoque *est, int produtosCad){
 	
 	if(produtosCad <= 0) return 0;
-	return ((est[produtosCad - 1].qtd * produtosCad) + valorTotal(est, produtosCad - 1));
-	
+	return est[produtosCad-1].qtd + valorTotal(est, produtosCad - 1);
+		
 }
 
 void buscaNome(estoque *est, char nomeProd[15], int produtosCad){
@@ -99,7 +99,6 @@ void buscaNome(estoque *est, char nomeProd[15], int produtosCad){
 		if(strcmp(nomeProd, est[i].nome) == 0){
 			printf("\nProduto solicitado: ");
 			exibe(est[i]);
-			return;
 		}
 		else{
 			printf("\nEsse produto não existe no estoque!");
@@ -138,3 +137,41 @@ void venda(estoque *est, char busca[15], int ele, int produtosCad){
 	return;
 }
 
+void carregarArq(estoque *est, int *pos, char *nomeArq, int prod){
+	
+	int setorTemp = 0;
+	
+	FILE *arq = fopen(nomeArq, "r");
+	
+	if(!arq){
+		printf("Erro ao abrir o arquivo!");
+		return;
+	}
+	
+	while(*pos < prod && fscanf(arq, "%s %d %d %f", est[*pos].nome, &setorTemp, &est[*pos].qtd, &est[*pos].valor) == 4){
+		est[*pos].set = (Setor)setorTemp;
+		(*pos)++;
+	}
+	
+	fclose(arq);
+	
+}
+
+void salvarArq(estoque *est, int pos, char *nomeArq){
+	
+	int i = 0;
+	
+	FILE *arq = fopen(nomeArq, "w");
+	
+	if(!arq){
+		printf("Erro ao abrir o arquivo!");
+		return;
+	}
+	
+	for(i = 0; i < pos; i++){
+		fprintf(arq, "%s %d %d %.2f", est[i].nome, est[i].set, est[i].qtd, est[i].valor);
+	}
+	
+	fclose(arq);
+	
+}
