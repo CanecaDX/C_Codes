@@ -1,7 +1,8 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "entrega5_LSE.h"
+#include "entrega6_LDE.h"
 
 int main(){
 	
@@ -79,7 +80,7 @@ int main(){
 								break;
 							}
 							
-							printf("\nMúsica com o nome solicitado: ");
+							printf("\nMúsica com o nome solicitada: ");
 							printf("\n |Música:    [%s]", rem->info->titulo);
 							printf("\n |Artista:   [%s]", rem->info->artista);
 							printf("\n |Letra da música: [%s]", rem->info->letra);

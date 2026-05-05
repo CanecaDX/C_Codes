@@ -11,11 +11,13 @@ typedef struct{
 
 typedef struct nodo{
 	struct nodo *prox;
+	struct nodo *ant;
 	musica *info;
 } nodo;
 
 typedef struct{
 	nodo *inicio;
+	nodo *fim;
 	int tamanho;
 } descritor;
 
@@ -29,3 +31,4 @@ nodo *set(descritor *lista, int pos);
 nodo *buscaNome(descritor *lista, char nome[256], int op);
 nodo *buscaCod(descritor *lista, int cod);
 //void consulta();
+

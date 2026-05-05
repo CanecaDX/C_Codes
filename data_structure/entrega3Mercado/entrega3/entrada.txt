@@ -1,0 +1,5 @@
+Batata 3 50 2.50
+Queijo 1 100 14.40 
+Granola 3 150 09.00
+
+

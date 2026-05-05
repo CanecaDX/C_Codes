@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "entrega5_LSE.h"
+#include "entrega6_LDE.h"
 
 descritor *criaDesc(void){
 	
 	descritor *novoDesc = (descritor*)malloc (sizeof(descritor));
 	novoDesc->tamanho = 0;
 	novoDesc->inicio = NULL;
+	novoDesc->fim = NULL;
 	
 	return novoDesc;			
 }
@@ -29,6 +30,7 @@ nodo *criaNodo(void){
 	scanf("%d", &novaMusica->info->execucoes);
 
 	novaMusica->prox = NULL;
+	novaMusica->ant = NULL;
 	
 	return novaMusica;
 }
@@ -38,32 +40,34 @@ void insere(descritor *lista, nodo *novaM, int pos){
 	if((lista->inicio == NULL) || (pos == 0)){
 		novaM->prox = lista->inicio;
 		lista->inicio = novaM;
+		lista->fim = novaM;
 		//novaM->prox = NULL;	
 		
 		lista->tamanho++;
 	} //fim ou meio
 	else{
-		nodo *aux = lista->inicio;
+		
 		int cont = 0;
 		
-		if(lista->tamanho < pos){ //insere no final se a posicao for inválida
-			while(aux->prox != NULL){
-				aux = aux->prox;
-			}
-			aux->prox = novaM;
+		if(lista->tamanho <= pos){ //insere no final se a posicao for inválida
+			nodo *aux = lista->fim;
+
+			aux->prox = novaM;		
+			novaM->ant = aux;
 			lista->tamanho++;
+			lista->fim = novaM;
 		}
 		else{
-			nodo *ant;
-			while(aux != NULL){
-				
-				ant = aux;
+			nodo *aux = lista->inicio;
+			while(aux->prox != NULL){
 				aux = aux->prox;
 				cont++;	
 				
 				if(cont == pos){
 					novaM->prox = aux;
-					ant->prox = novaM;
+					novaM->ant = aux->ant;
+					aux->ant->prox = novaM;
+					aux->ant = novaM;
 					lista->tamanho++;
 				}
 			}
@@ -74,32 +78,41 @@ nodo *remover(descritor *lista, int pos){
 	
 	if((lista->tamanho == 0) || (pos > lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");
-		return NULL;
+		return NULL; 
 	}
 	else{//inicio
+		nodo *aux = lista->inicio;
 		if(pos == 0){
-			nodo *aux = lista->inicio;
-			aux = lista->inicio;
-			lista->inicio = lista->inicio->prox;
+			lista->inicio = aux->prox;
+			if(lista->inicio != NULL){
+					lista->inicio->ant = NULL;
+			}
+			if(lista->inicio == NULL){
+					lista->fim = NULL;
+			}
 			lista->tamanho--;
 			return aux;
 		}//meio ou fim
 		else{
 			
 			int cont = 0;
-			nodo *ant;
 			nodo *aux = lista->inicio;
 			
-			while(aux->prox != NULL){
-				ant = aux;
-				aux = aux->prox;	
-				cont++;
-				
+			while(aux != NULL){
 				if(cont == pos){
-					ant->prox = aux->prox;
+					aux->ant->prox = aux->prox;
+					
+					if(aux->prox != NULL){
+							aux->prox->ant = aux->ant;
+					}
+					if(aux->prox == NULL){
+						lista->fim = aux->ant;
+					}
 					lista->tamanho--;
 					return aux;
 				}
+				aux = aux->prox;	
+				cont++;
 			}
 		}
 	}
@@ -244,4 +257,5 @@ nodo *buscaCod(descritor *lista, int cod){
 					return NULL;			
 	}
 }
+
 

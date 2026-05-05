@@ -23,7 +23,8 @@ typedef struct bandas{
 	int ranking;
 } bandas;
 
-bandas* preencheStruct();
+bandas *preencheStruct();
+//void preencheStruct(bandas *p, int numBandas);
 void exibeStruct(bandas *listaB, int numBandas);
 void exibeUma(bandas listaB);
 void exibeRanking(bandas *listaB, int numRank, int numBandas);
@@ -89,9 +90,11 @@ bandas *preencheStruct(bandas *p, int numBandas){
 	p = (bandas*)malloc(numBandas * sizeof(bandas));
 	
 	for(i = 0; i<numBandas; i++){
+	 setbuf(stdin, NULL);
 	 printf("\nInsira dados da %d° banda: ", i+1);
 	 printf("\nInsira o nome da banda: ");
-	 scanf("%s", p[i].nome);
+	 scanf("%[^\n]s", p[i].nome);
+	 setbuf(stdin, NULL);	
 	 printf("\n1 - ROCK\n");
 	 printf("2 - METAL\n");
 	 printf("3 - MPB\n");
@@ -101,13 +104,17 @@ bandas *preencheStruct(bandas *p, int numBandas){
 	 printf("7 - ELETRONICA\n");	 
 	 printf("\nEscolha o genero da banda: ");
 	 scanf("%d", &p[i].tipo);
+	 setbuf(stdin, NULL);
 	 printf("Insira o número de integrantes da banda: ");
+	 setbuf(stdin, NULL);
 	 scanf("%d", &p[i].integrantes);
+	 setbuf(stdin, NULL);
 	 printf("Insira o ranking da banda (top 5): ");
+	 setbuf(stdin, NULL);
 	 scanf("%d", &p[i].ranking);
 	}
 	
- return p;
+  return p;
 }
 
 void exibeStruct(bandas *listaB, int numBandas){
