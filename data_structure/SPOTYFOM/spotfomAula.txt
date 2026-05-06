@@ -1,0 +1,13 @@
+Utilizar STRTOK para fazer a separação dos campos das músicas no trabalho;
+Ele "bufferiza" cada linha e retorna o primeiro campo válido;
+Passando NULL nas execuções seguintes ele mantém o mesmo buffer e retorna o proxímo elemento válido, excluindo o primeiro.
+O que define quantas vezes o loop de coleta das linhas é o valor inicial no arquivo de entrada.
+
+STRCPY para copiar strings
+
+ATOI para copiar campos em inteiro (string -> int)
+
+strcpy(Banda, strtok(frase, ";"));
+int codigo = atoi(NULL, ";"));
+
+Criar playlists com músicas aleatórias (filas) e pessoais (pilha) com funções de execução.
