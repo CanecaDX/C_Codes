@@ -39,11 +39,17 @@ void insere(descritor *lista, nodo *novaM, int pos){
 	//inicio
 	if((lista->inicio == NULL) || (pos == 0)){
 		novaM->prox = lista->inicio;
+		
+		if(lista->inicio != NULL){
+			lista>inicio->ant = novaM;
+		}
 		lista->inicio = novaM;
-		lista->fim = novaM;
-		//novaM->prox = NULL;	
+		
+		if(lista->tamanho = 0)
+			lista->fim = novaM;
 		
 		lista->tamanho++;
+		return;
 	} //fim ou meio
 	else{
 		
@@ -57,7 +63,7 @@ void insere(descritor *lista, nodo *novaM, int pos){
 			lista->tamanho++;
 			lista->fim = novaM;
 		}
-		else{
+		else{ //insere no meio
 			nodo *aux = lista->inicio;
 			while(aux->prox != NULL){
 				aux = aux->prox;
