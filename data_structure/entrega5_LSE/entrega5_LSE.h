@@ -14,7 +14,7 @@ typedef struct nodo{
 	musica *info;
 } nodo;
 
-typedef struct{
+typedef struct descritor{
 	nodo *inicio;
 	int tamanho;
 } descritor;

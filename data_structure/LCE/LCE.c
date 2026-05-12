@@ -31,7 +31,7 @@ void insere(descritor *lista, nodo *novoN , int pos){
 			if(lista->inicio == NULL || pos == 0){
 				novoN->prox = lista->inicio;
 				lista->inicio = novoN;
-			}
+			
 			
 				if(novoN->prox == NULL){
 					novoN->prox = novoN;
@@ -45,7 +45,7 @@ void insere(descritor *lista, nodo *novoN , int pos){
 					aux->prox = novoN;
 				}
 				lista->tam++;
-			else{
+			}else{
 			
 				nodo *aux = lista->inicio;
 				int cont = 0;

@@ -53,8 +53,8 @@ void insere(descritor *lista, nodo *novaM, int pos){
 			aux->prox = novaM;
 			lista->tamanho++;
 		}
-		else{
-			nodo *ant;
+		else{ //procura posicao e insere
+			nodo *ant = NULL;
 			while(aux != NULL){
 				
 				ant = aux;

@@ -38,7 +38,7 @@ int main(){
 			case 2:
 				if(lista == NULL){
 					printf("Lista não existe!");
-					return 1;
+					break;
 				}
 				elemento = criaNodo();
 				printf("Que posicao deseja inserir na lista? ");
