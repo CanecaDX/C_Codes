@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "entrega5_LSE.h"
+#include "LDE.h"
 
-descritor *criaDesc(void){
+descritorD *criaDescD(void){
 	
-	descritor *novoDesc = (descritor*)malloc (sizeof(descritor));
+	descritorD *novoDesc = (descritor*)malloc (sizeof(descritor));
 	novoDesc->tamanho = 0;
 	novoDesc->inicio = NULL;
+	novoDesc->fim = NULL;
 	
 	return novoDesc;			
 }
 
 nodo *criaNodo(void){
 		
-	nodo *novaMusica = (nodo*)malloc (sizeof(nodo));
+	nodoD *novaMusica = (nodoD*)malloc (sizeof(nodoD));
 	novaMusica->info = (musica*)malloc(sizeof(musica));
 	
 	printf("Insira o nome da música: ");
@@ -29,83 +30,101 @@ nodo *criaNodo(void){
 	scanf("%d", &novaMusica->info->execucoes);
 
 	novaMusica->prox = NULL;
+	novaMusica->ant = NULL;
 	
 	return novaMusica;
 }
 
-void insere(descritor *lista, nodo *novaM, int pos){
+void insere(descritorD *lista, nodoD *novaM, int pos){
 	//inicio
 	if((lista->inicio == NULL) || (pos == 0)){
 		novaM->prox = lista->inicio;
+		
+		if(lista->inicio != NULL){
+			lista>inicio->ant = novaM;
+		}
 		lista->inicio = novaM;
-		//novaM->prox = NULL;	
+		
+		if(lista->tamanho = 0)
+			lista->fim = novaM;
 		
 		lista->tamanho++;
+		return;
 	} //fim ou meio
 	else{
-		nodo *aux = lista->inicio;
+		
 		int cont = 0;
 		
-		if(lista->tamanho < pos){ //insere no final se a posicao for inválida
-			while(aux->prox != NULL){
-				aux = aux->prox;
-			}
-			aux->prox = novaM;
+		if(lista->tamanho <= pos){ //insere no final se a posicao for inválida
+			nodo *aux = lista->fim;
+
+			aux->prox = novaM;		
+			novaM->ant = aux;
 			lista->tamanho++;
+			lista->fim = novaM;
 		}
-		else{ //procura posicao e insere
-			nodo *ant = NULL;
-			while(aux != NULL){
-				
-				ant = aux;
+		else{ //insere no meio
+			nodo *aux = lista->inicio;
+			while(aux->prox != NULL){
 				aux = aux->prox;
 				cont++;	
 				
 				if(cont == pos){
 					novaM->prox = aux;
-					ant->prox = novaM;
+					novaM->ant = aux->ant;
+					aux->ant->prox = novaM;
+					aux->ant = novaM;
 					lista->tamanho++;
 				}
 			}
 		}
 	}
 }
-nodo *remover(descritor *lista, int pos){
+nodoD *remover(descritorD *lista, int pos){
 	
 	if((lista->tamanho == 0) || (pos > lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");
-		return NULL;
+		return NULL; 
 	}
 	else{//inicio
+		nodo *aux = lista->inicio;
 		if(pos == 0){
-			nodo *aux = lista->inicio;
-
-			lista->inicio = lista->inicio->prox;
+			lista->inicio = aux->prox;
+			if(lista->inicio != NULL){
+					lista->inicio->ant = NULL;
+			}
+			if(lista->inicio == NULL){
+					lista->fim = NULL;
+			}
 			lista->tamanho--;
 			return aux;
 		}//meio ou fim
 		else{
 			
 			int cont = 0;
-			nodo *ant;
 			nodo *aux = lista->inicio;
 			
-			while(aux->prox != NULL){
-				ant = aux;
-				aux = aux->prox;	
-				cont++;
-				
+			while(aux != NULL){
 				if(cont == pos){
-					ant->prox = aux->prox;
+					aux->ant->prox = aux->prox;
+					
+					if(aux->prox != NULL){
+							aux->prox->ant = aux->ant;
+					}
+					if(aux->prox == NULL){
+						lista->fim = aux->ant;
+					}
 					lista->tamanho--;
 					return aux;
 				}
+				aux = aux->prox;	
+				cont++;
 			}
 		}
 	}
 }
 
-void exibeLista(descritor *lista){
+void exibeLista(descritorD *lista){
 	nodo* aux = lista->inicio;
 	
 	printf("\n");
@@ -122,7 +141,7 @@ void exibeLista(descritor *lista){
 	printf("\n");
 }
 
-nodo *get(descritor *lista, int pos){
+nodoD *get(descritorD *lista, int pos){
 	
 	if((lista->tamanho == 0) || pos > (lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");	
@@ -151,7 +170,7 @@ nodo *get(descritor *lista, int pos){
 	}
 }
 
-nodo *set(descritor *lista, int pos){
+nodoD *set(descritorD *lista, int pos){
 	
 	if((lista->tamanho == 0) || pos > (lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");	
@@ -179,7 +198,7 @@ nodo *set(descritor *lista, int pos){
 	scanf("%d", &mod->info->execucoes);
 }
 
-nodo *buscaNome(descritor *lista, char nome[256], int op){
+nodoD *buscaNome(descritorD *lista, char nome[256], int op){
 	
 	if(lista->tamanho == 0){
 		printf("\nA lista está vazia!");	
@@ -224,7 +243,7 @@ nodo *buscaNome(descritor *lista, char nome[256], int op){
 	}
 }
 
-nodo *buscaCod(descritor *lista, int cod){
+nodoD *buscaCod(descritorD *lista, int cod){
 	
 	if(lista->tamanho == 0){
 		printf("\nA lista está vazia!");	
@@ -244,4 +263,5 @@ nodo *buscaCod(descritor *lista, int cod){
 					return NULL;			
 	}
 }
+
 
