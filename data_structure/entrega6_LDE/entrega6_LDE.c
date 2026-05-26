@@ -41,11 +41,11 @@ void insere(descritor *lista, nodo *novaM, int pos){
 		novaM->prox = lista->inicio;
 		
 		if(lista->inicio != NULL){
-			lista>inicio->ant = novaM;
+			lista->inicio->ant = novaM;
 		}
 		lista->inicio = novaM;
 		
-		if(lista->tamanho = 0)
+		if(lista->tamanho == 0)
 			lista->fim = novaM;
 		
 		lista->tamanho++;

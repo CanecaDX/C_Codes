@@ -1,3 +1,6 @@
+#ifndef pilha_H
+#define pilha_H
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "musica.h"
@@ -19,3 +22,5 @@ nodoP *pop(descritorP *pilha);
 int emptyP(descritorP *pilha);
 void imprimeP(descritorP *pilha);
 nodoP *top(descritorP *pilha);
+
+#endif

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "LSE.h"
 
 descritorS *criaDescS(void){
@@ -12,28 +13,16 @@ descritorS *criaDescS(void){
 	return novoDesc;			
 }
 
-nodoS *criaNodo(void){
+nodoS *criaNodoS(musica *song){
 		
 	nodoS *novaMusica = (nodoS*)malloc (sizeof(nodoS));
-	novaMusica->info = (musica*)malloc(sizeof(musica));
-	
-	printf("Insira o nome da música: ");
-	scanf(" %[^\n]", novaMusica->info->titulo);
-	printf("Insira o nome do artista: ");
-	scanf(" %[^\n]", novaMusica->info->artista);
-	printf("Insira a letra da música: ");
-	scanf(" %[^\n]", novaMusica->info->letra);
-	printf("Insira o codigo da música: ");
-	scanf("%d", &novaMusica->info->codigo);
-	printf("Insira o número de execuções da música: ");
-	scanf("%d", &novaMusica->info->execucoes);
-
 	novaMusica->prox = NULL;
+	novaMusica->info = song;
 	
 	return novaMusica;
 }
 
-void insere(descritorS *lista, nodoS *novaM, int pos){
+void insereS(descritorS *lista, nodoS *novaM, int pos){
 	//inicio
 	if((lista->inicio == NULL) || (pos == 0)){
 		novaM->prox = lista->inicio;
@@ -43,7 +32,7 @@ void insere(descritorS *lista, nodoS *novaM, int pos){
 		lista->tamanho++;
 	} //fim ou meio
 	else{
-		nodo *aux = lista->inicio;
+		nodoS *aux = lista->inicio;
 		int cont = 0;
 		
 		if(lista->tamanho < pos){ //insere no final se a posicao for inválida
@@ -54,7 +43,7 @@ void insere(descritorS *lista, nodoS *novaM, int pos){
 			lista->tamanho++;
 		}
 		else{ //procura posicao e insere
-			nodo *ant = NULL;
+			nodoS *ant = NULL;
 			while(aux != NULL){
 				
 				ant = aux;
@@ -70,7 +59,7 @@ void insere(descritorS *lista, nodoS *novaM, int pos){
 		}
 	}
 }
-nodoS *remover(descritorS *lista, int pos){
+nodoS *removerS(descritorS *lista, int pos){
 	
 	if((lista->tamanho == 0) || (pos > lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");
@@ -78,7 +67,7 @@ nodoS *remover(descritorS *lista, int pos){
 	}
 	else{//inicio
 		if(pos == 0){
-			nodo *aux = lista->inicio;
+			nodoS *aux = lista->inicio;
 
 			lista->inicio = lista->inicio->prox;
 			lista->tamanho--;
@@ -87,8 +76,8 @@ nodoS *remover(descritorS *lista, int pos){
 		else{
 			
 			int cont = 0;
-			nodo *ant;
-			nodo *aux = lista->inicio;
+			nodoS *ant;
+			nodoS *aux = lista->inicio;
 			
 			while(aux->prox != NULL){
 				ant = aux;
@@ -105,8 +94,8 @@ nodoS *remover(descritorS *lista, int pos){
 	}
 }
 
-void exibeLista(descritorS *lista){
-	nodo* aux = lista->inicio;
+void exibeListaS(descritorS *lista){
+	nodoS *aux = lista->inicio;
 	
 	printf("\n");
 	while(aux != NULL){
@@ -114,7 +103,7 @@ void exibeLista(descritorS *lista){
 		printf("\n |Artista:   [%s]", aux->info->artista);
 		printf("\n |Letra da música: [%s]", aux->info->letra);
 		printf("\n |Código:    [%d]", aux->info->codigo);
-		printf("\n |Execuções: [%d]", aux->info->execucoes);
+		//printf("\n |Execuções: [%d]", aux->info->execucoes);
 		
 		printf("\n");
 		aux = aux->prox;
@@ -122,14 +111,14 @@ void exibeLista(descritorS *lista){
 	printf("\n");
 }
 
-nodoS *get(descritorS *lista, int pos){
+nodoS *getS(descritorS *lista, int pos){
 	
 	if((lista->tamanho == 0) || pos > (lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");	
 		return NULL;
 	}
 	else{
-		nodo *get = lista->inicio;
+		nodoS *get = lista->inicio;
 		int cont = 0;
 		
 		if(pos == 0){
@@ -151,15 +140,15 @@ nodoS *get(descritorS *lista, int pos){
 	}
 }
 
-nodoS *set(descritorS *lista, int pos){
+nodoS *setS(descritorS *lista, int pos){
 	
 	if((lista->tamanho == 0) || pos > (lista->tamanho)){
 		printf("\nPosicao não existe ou a lista está vazia!");	
 		return NULL;
 	}
 	
-	nodo *mod = NULL;
-	mod = get(lista, pos);
+	nodoS *mod = NULL;
+	mod = getS(lista, pos);
 	
 	if(mod == NULL){
 		printf("Algo deu errado.");
@@ -175,22 +164,35 @@ nodoS *set(descritorS *lista, int pos){
 	scanf(" %[^\n]", mod->info->letra);
 	printf("Código: ");
 	scanf("%d", &mod->info->codigo);
-	printf("Execuções: ");
-	scanf("%d", &mod->info->execucoes);
+	//~ printf("Execuções: ");
+	//~ scanf("%d", &mod->info->execucoes);
 }
 
-nodoS *buscaNome(descritorS *lista, char nome[256], int op){
+void converteMinuscula(char str[256]) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
+
+nodoS *buscaNomeS(descritorS *lista, char nome[256], int op){
+	
+	char minuscula[256];
+	strcpy(minuscula, nome);
+	converteMinuscula(minuscula);
 	
 	if(lista->tamanho == 0){
 		printf("\nA lista está vazia!");	
 		return NULL;
 	}
 	else{
-		nodo *aux = lista->inicio;
+		nodoS *aux = lista->inicio;
 		
 		if(op == 1){
 				while(aux != NULL){
-					if(strcmp(nome, aux->info->titulo) == 0){
+					char tituloMin[256];
+					strcpy(tituloMin, aux->info->titulo);
+					converteMinuscula(tituloMin);
+					if(strcmp(minuscula, tituloMin) == 0){
 						return aux;
 					}
 					aux = aux-> prox;
@@ -199,16 +201,20 @@ nodoS *buscaNome(descritorS *lista, char nome[256], int op){
 					return NULL;
 		}
 		else if(op == 2){
-				nodo *aux = lista->inicio;
+				nodoS *aux = lista->inicio;
 				int encontrou = 0;
 				
 				while(aux != NULL){
-					if(strcmp(nome, aux->info->artista) == 0){	
+					char artistaMin[256];
+					strcpy(artistaMin, aux->info->artista);
+					converteMinuscula(artistaMin);
+					if(strcmp(minuscula, artistaMin) == 0){	
+						printf("\n");
 						printf("\n |Música:    [%s]", aux->info->titulo);
 						printf("\n |Artista:   [%s]", aux->info->artista);
 						printf("\n |Letra da música: [%s]", aux->info->letra);
 						printf("\n |Código:    [%d]", aux->info->codigo);
-						printf("\n |Execuções: [%d]", aux->info->execucoes);
+						//printf("\n |Execuções: [%d]", aux->info->execucoes);
 						encontrou = 1;
 					}
 					aux = aux-> prox;
@@ -224,14 +230,14 @@ nodoS *buscaNome(descritorS *lista, char nome[256], int op){
 	}
 }
 
-nodoS *buscaCod(descritorS *lista, int cod){
+nodoS *buscaCodS(descritorS *lista, int cod){
 	
 	if(lista->tamanho == 0){
 		printf("\nA lista está vazia!");	
 		return NULL;
 	}
 	else{
-		nodo *get = lista->inicio;
+		nodoS *get = lista->inicio;
 		int encontrado = 0;
 		
 			while(get != NULL){	

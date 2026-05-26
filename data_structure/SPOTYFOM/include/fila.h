@@ -1,6 +1,10 @@
+#ifndef fila_H
+#define fila_H
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "musica.h"
+#include "LSE.h"
 
 typedef struct nodoF{
 	musica *info;
@@ -14,7 +18,8 @@ typedef struct descritorF{
 }descritorF;
 
 descritorF *criaDescF(void);
-nodoF *criaNodoF(void);
+nodoF *criaNodoF(musica *song);
+descritorF *randomiza(descritorS *listaSE, int qtd_m);
 void enqueue(descritorF *fila, nodoF *novoE);
 nodoF *dequeue(descritorF *fila);
 int emptyF(descritorF *fila);
@@ -22,3 +27,4 @@ void imprimeF(descritorF *fila);
 void deletarF(descritorF *fila);
 int lenghtF(descritorF *fila);
 
+#endif

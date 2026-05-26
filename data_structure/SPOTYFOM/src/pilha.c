@@ -1,13 +1,13 @@
 #include "pilha.h"
 
-descritorP *criaDesc(void){
+descritorP *criaDescP(void){
 	
 	descritorP *pilha = (descritorP*)malloc (sizeof(descritorP));
 	pilha->top = NULL;
 	pilha->tamanho = 0;
 }
 
-nodoP *criaNodo(void){
+nodoP *criaNodoP(void){
 	
 	nodoP *novaMusica = (nodoP*)malloc (sizeof(nodoP));
 	novaMusica->info = (musica*)malloc (sizeof(nodoP));
@@ -41,7 +41,7 @@ nodoP *pop(descritorP *pilha){
 	return aux;
 }
 
-int vazia(descritorP *pilha){
+int emptyP(descritorP *pilha){
 	if(pilha->top == NULL)
 		return 1;
 		else
@@ -52,7 +52,7 @@ nodoP *top(descritorP *pilha){
 	return pilha->top;
 }
 
-void imprime(descritorP *pilha){
+void imprimeP(descritorP *pilha){
 	
 	nodoP *topo = top(pilha);
 	
