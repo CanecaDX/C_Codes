@@ -156,16 +156,16 @@ int main(){
 			case 5:
 				break;
 			case 6:
-				if((fila!) || (pilha!)){
+				if((!fila)){
 					printf("Não existem playlists criadas!");
 				}
-				int op2 = 0;
+				int op3 = 0;
 				printf("\n1_Aleatória.");
 				printf("\n2_Pessoal.");
 				printf("\nQual playlist deseja salvar? ");
 				setbuf(stdin, NULL);
-				scanf("%d", &op2);
-					switch(op2){
+				scanf("%d", &op3);
+					switch(op3){
 						case 1:
 							salvar_aleat(fila);
 							break;

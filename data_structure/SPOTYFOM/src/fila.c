@@ -121,24 +121,28 @@ int lenghtF(descritorF *fila){
 	return fila->tamanho;	
 }
 
-//~ void salvar_aleat() {
+void salvar_aleat(descritorF *fila){
 
-	//~ FILE *arquivo = fopen("estoque.txt", "w");
-	//~ if (!arquivo) {
-		//~ printf("Erro ao abrir o arquivo para escrita!\n");
-		//~ return;
-	//~ }
+	FILE *arquivo = fopen("playlist_aleatoria.txt", "w");
+	if (!arquivo) {
+		printf("Erro ao abrir o arquivo para escrita!\n");
+		return;
+	}
+	
+	nodoF *aux = fila->head;
 
-	//~ for (int i = 0; i < EOF; i++) {
-		//~ fprintf(arquivo, "%d %s %d %.2f\n",
-		        //~ esto[i].id,
-		        //~ esto[i].nome,
-		        //~ esto[i].qtd,
-		        //~ esto[i].preco
-		       //~ );
-	//~ }
+	fprintf(arquivo, "Playlist Aleatoria: \n\n");
+	while(aux != NULL){
+		fprintf(arquivo, "|Artista: %s \n |Codigo: %d \n |Musica: %s \n |Letra: %s\n\n",
+		        aux->info->artista,
+		        aux->info->codigo,
+		        aux->info->titulo,
+		        aux->info->letra
+		);
+		aux = aux->prox;
+	}
 
-	//~ fclose(arquivo);
-	//~ printf("Dados salvos com sucesso!\n");
-//~ }
+	fclose(arquivo);
+	printf("Dados salvos com sucesso!\n");
+}
 

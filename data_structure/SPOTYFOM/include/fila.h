@@ -26,5 +26,6 @@ int emptyF(descritorF *fila);
 void imprimeF(descritorF *fila);
 void deletarF(descritorF *fila);
 int lenghtF(descritorF *fila);
+void salvar_aleat(descritorF *fila);
 
 #endif
