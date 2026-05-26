@@ -27,6 +27,8 @@ nodoF *criaNodo(void){
 	scanf("%d", &novaMusica->info->execucoes);
 	
 	novaMusica->prox = NULL;
+	
+	return novaMusica;
 }
 
 void enqueue(descritorF *fila, nodoF *novoE){
