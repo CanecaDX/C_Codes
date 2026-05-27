@@ -1,4 +1,3 @@
-
 APP := exec
 
 CC ?= gcc

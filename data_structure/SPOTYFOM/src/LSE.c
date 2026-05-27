@@ -103,7 +103,7 @@ void exibeListaS(descritorS *lista){
 		printf("\n |Artista:   [%s]", aux->info->artista);
 		printf("\n |Letra da música: [%s]", aux->info->letra);
 		printf("\n |Código:    [%d]", aux->info->codigo);
-		//printf("\n |Execuções: [%d]", aux->info->execucoes);
+		printf("\n |Execuções: [%d]", aux->info->execucoes);
 		
 		printf("\n");
 		aux = aux->prox;
@@ -155,15 +155,15 @@ nodoS *setS(descritorS *lista, int pos){
 		return;
 	}
 	
-	printf("Modifique os dados da música: ");
-	printf("\nNome: ");
-	scanf(" %[^\n]", mod->info->titulo);
-	printf("Artista: ");
-	scanf(" %[^\n]", mod->info->artista);
-	printf("Letra: ");
-	scanf(" %[^\n]", mod->info->letra);
-	printf("Código: ");
-	scanf("%d", &mod->info->codigo);
+	//~ printf("Modifique os dados da música: ");
+	//~ printf("\nNome: ");
+	//~ scanf(" %[^\n]", mod->info->titulo);
+	//~ printf("Artista: ");
+	//~ scanf(" %[^\n]", mod->info->artista);
+	//~ printf("Letra: ");
+	//~ scanf(" %[^\n]", mod->info->letra);
+	//~ printf("Código: ");
+	//~ scanf("%d", &mod->info->codigo);
 	//~ printf("Execuções: ");
 	//~ scanf("%d", &mod->info->execucoes);
 }
@@ -238,16 +238,15 @@ nodoS *buscaCodS(descritorS *lista, int cod){
 	}
 	else{
 		nodoS *get = lista->inicio;
-		int encontrado = 0;
 		
 			while(get != NULL){	
 				if(cod == get->info->codigo){
 					return get;
 				}				
 				get = get->prox;
-			}
-					printf("\nCódigo não encontrado!");
-					return NULL;			
+			}		
 	}
+	printf("\nCódigo não encontrado!");
+	return NULL;	
 }
 

@@ -1,120 +1,38 @@
 Playlist Aleatoria: 
-|Artista: Beto Guedes 
- |Codigo: 6646 
- |Musica: AMOR DE INDIO 
- |Letra: Tudo que move e sagrado 
 
-Playlist Aleatoria: 
-|Artista: Infantil 
- |Codigo: 18311 
- |Musica: SHABON DAMA 
- |Letra: You ve broken my heart ame no kohsoku
+|Musica: MIL ANOS 
+ |Artista: Jorge e Mateus 
+ |Letra: Voce fala demais  
+ |Codigo: 1736 
+ |Execuções: 0
 
-Playlist Aleatoria: 
-|Artista: Grupo Talagaco e Olodum 
- |Codigo: 9616 
- |Musica: APAIXONADO POR VOCE 
- |Letra: Lembra aquele dia azul
+|Musica: NOTHING S GONNA CHANGE MY LOVE FOR YOU 
+ |Artista: Glenn Medeiros 
+ |Letra: If I had to live my life 
+ |Codigo: 4597 
+ |Execuções: 0
 
-Playlist Aleatoria: 
-|Artista: Claudia Leitte 
- |Codigo: 16259 
- |Musica: BALDIN DE GELO 
- |Letra: Ha tres dias abandonada ela perdeu o namorado
+|Musica: SO BEAUTIFULL 
+ |Artista: Chris de Burgh 
+ |Letra: I m lying here tonight 
+ |Codigo: 2549 
+ |Execuções: 0
 
-Playlist Aleatoria: 
-|Artista: Carlinhos Brown E Dj Dero 
- |Codigo: 7633 
- |Musica: MARIA CAIPIRINHA 
- |Letra: Te te te te te te te te te te te te t
+|Musica: IZAKAYA 
+ |Artista: Itsuki Hiroshi 
+ |Letra: (H) e Moshimo kiraide nakatara 
+ |Codigo: 5007 
+ |Execuções: 0
 
-Playlist Aleatoria: 
-|Artista: Capital Inicial 
- |Codigo: 1502 
- |Musica: ALTOS E BAIXOS 
- |Letra: Esse aqui e meu lugar
+|Musica: ONNA NO NAMIDA 
+ |Artista: Ishihara Junko 
+ |Letra: Kami o tokaseba anata no nioi 
+ |Codigo: 2384 
+ |Execuções: 0
 
-Playlist Aleatoria: 
-|Artista: Fernanda Abreu 
- |Codigo: 15999 
- |Musica: VOCE PRA MIM 
- |Letra: E incrivel a nossa historia
-
-Playlist Aleatoria: 
-|Artista: Juliana Baroni 
- |Codigo: 9418 
- |Musica: CIDADE TRISTE 
- |Letra: A dor
-
-Playlist Aleatoria: 
-|Artista: Elvis Presley 
- |Codigo: 19840 
- |Musica: TROUBLE 
- |Letra: If you re looking for trouble
-
-Playlist Aleatoria: 
-|Artista: Bruna Viola e Bruno e Barreto 
- |Codigo: 16317 
- |Musica: QUEM E QUE NAO GOSTA 
- |Letra: Ele tava acostumado com mulher cheia
-
-Playlist Aleatoria: 
-|Artista: Clara Nunes 
- |Codigo: 15153 
- |Musica: SERRINHA 
- |Letra: Serrinha e o imperio do samba chegando
-
-Playlist Aleatoria: 
-|Artista: Eduardo Costa 
- |Codigo: 15710 
- |Musica: OS 10 MANDAMENTOS DO AMOR 
- |Letra: Os dez mandamentos do amor para conquistar
-
-Playlist Aleatoria: 
-|Artista: Fukuyama Masaharu 
- |Codigo: 5795 
- |Musica: SAKURA ZAKA 
- |Letra: Kimi yo zutto shiawase ni 
-
-Playlist Aleatoria: 
-|Artista: Cyz 
- |Codigo: 1548 
- |Musica: DOCE MEL 
- |Letra: Voce tem um brilho no olhar
-
-Playlist Aleatoria: 
-|Artista: Chico Buarque 
- |Codigo: 9630 
- |Musica: CAROLINA 
- |Letra: Carolina
-
-Playlist Aleatoria: 
-|Artista: Julio Iglesias E Daniel 
- |Codigo: 6038 
- |Musica: VIVER A VIDA 
- |Letra: Deixa que eu te fale um pouco 
-
-Playlist Aleatoria: 
-|Artista: Joao Neto e Frederico 
- |Codigo: 15020 
- |Musica: TE AMO E NADA MAIS 
- |Letra: Teus olhos o teu jeito a sua voz fala 
-
-Playlist Aleatoria: 
-|Artista: Jorge Benjor 
- |Codigo: 7215 
- |Musica: POR CAUSA DE VOCE MENINA 
- |Letra: Por causa de voce bate em meu peito
-
-Playlist Aleatoria: 
-|Artista: Jessi J 
- |Codigo: 19361 
- |Musica: FLASHLIGHT 
- |Letra: When tomorrow comes I ll be on my own
-
-Playlist Aleatoria: 
-|Artista: BoA 
- |Codigo: 18502 
- |Musica: MAMORITAI  WHITE WISHES  
- |Letra: Kore de owari soh omohte ita tooi ano
+|Musica: PIECE OF ME 
+ |Artista: Britney Spears 
+ |Letra: I m Miss American dream since I was  
+ |Codigo: 19141 
+ |Execuções: 0
 

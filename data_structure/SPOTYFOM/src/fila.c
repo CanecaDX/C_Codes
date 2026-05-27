@@ -73,9 +73,10 @@ void enqueue(descritorF *fila, nodoF *novoE){
 	fila->tamanho++;
 }
 
-nodoF *dequeue(descritorF *fila){
+nodoF *dequeue(descritorF *fila, descritorS *listaSE){
 	
 	nodoF *aux = fila->head;
+	nodoS *aux2 = listaSE->inicio;
 	
 	fila->head = fila->head->prox;
 	fila->tamanho--;
@@ -83,6 +84,14 @@ nodoF *dequeue(descritorF *fila){
 	if(fila->head == NULL)
 		fila->tail = fila->head;
 		
+	while(aux2 != NULL){
+		if(aux2->info->codigo == aux->info->codigo){
+			aux2->info->execucoes++;
+			return aux;
+		}
+		aux2 = aux2->prox;
+	}
+	
 	return aux;
 }
 
@@ -103,19 +112,19 @@ void imprimeF(descritorF *fila){
 		printf("\n |Artista:   [%s]", first->info->artista);
 		printf("\n |Letra da música: [%s]", first->info->letra);
 		printf("\n |Código:    [%d]", first->info->codigo);
-		//printf("\n |Execuções: [%d]", first->info->execucoes);
+		printf("\n |Execuções: [%d]", first->info->execucoes);
 		printf("\n");
 		first = first->prox;
 	}
 	printf("\n");
 }
 
-void deletarF(descritorF *fila){
+//~ void deletarF(descritorF *fila){
 	
-	while(emptyF(fila) == 0){
-		free(dequeue(fila));
-	}
-}
+	//~ while(emptyF(fila) == 0){
+		//~ free(dequeue(fila));
+	//~ }
+//~ }
 
 int lenghtF(descritorF *fila){
 	return fila->tamanho;	
@@ -133,16 +142,17 @@ void salvar_aleat(descritorF *fila){
 
 	fprintf(arquivo, "Playlist Aleatoria: \n\n");
 	while(aux != NULL){
-		fprintf(arquivo, "|Artista: %s \n |Codigo: %d \n |Musica: %s \n |Letra: %s\n\n",
-		        aux->info->artista,
-		        aux->info->codigo,
+		fprintf(arquivo, "|Musica: %s \n |Artista: %s \n |Letra: %s \n |Codigo: %d \n |Execuções: %d\n\n",
 		        aux->info->titulo,
-		        aux->info->letra
+		        aux->info->artista,
+		        aux->info->letra,	        
+		        aux->info->codigo,
+		        aux->info->execucoes
 		);
 		aux = aux->prox;
 	}
 
 	fclose(arquivo);
-	printf("Dados salvos com sucesso!\n");
+	printf("Musicas salvas com sucesso!\n");
 }
 

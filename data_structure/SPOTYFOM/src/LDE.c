@@ -18,16 +18,16 @@ nodoD *criaNodoD(void){
 	nodoD *novaMusica = (nodoD*)malloc (sizeof(nodoD));
 	novaMusica->info = (musica*)malloc(sizeof(musica));
 	
-	printf("Insira o nome da música: ");
-	scanf(" %[^\n]", novaMusica->info->titulo);
-	printf("Insira o nome do artista: ");
-	scanf(" %[^\n]", novaMusica->info->artista);
-	printf("Insira a letra da música: ");
-	scanf(" %[^\n]", novaMusica->info->letra);
-	printf("Insira o codigo da música: ");
-	scanf("%d", &novaMusica->info->codigo);
-	printf("Insira o número de execuções da música: ");
-	scanf("%d", &novaMusica->info->execucoes);
+	//~ printf("Insira o nome da música: ");
+	//~ scanf(" %[^\n]", novaMusica->info->titulo);
+	//~ printf("Insira o nome do artista: ");
+	//~ scanf(" %[^\n]", novaMusica->info->artista);
+	//~ printf("Insira a letra da música: ");
+	//~ scanf(" %[^\n]", novaMusica->info->letra);
+	//~ printf("Insira o codigo da música: ");
+	//~ scanf("%d", &novaMusica->info->codigo);
+	//~ printf("Insira o número de execuções da música: ");
+	//~ scanf("%d", &novaMusica->info->execucoes);
 
 	novaMusica->prox = NULL;
 	novaMusica->ant = NULL;
@@ -185,17 +185,17 @@ nodoD *setD(descritorD *lista, int pos){
 		return;
 	}
 	
-	printf("Modifique os dados da música: ");
-	printf("\nNome: ");
-	scanf(" %[^\n]", mod->info->titulo);
-	printf("Artista: ");
-	scanf(" %[^\n]", mod->info->artista);
-	printf("Letra: ");
-	scanf(" %[^\n]", mod->info->letra);
-	printf("Código: ");
-	scanf("%d", &mod->info->codigo);
-	printf("Execuções: ");
-	scanf("%d", &mod->info->execucoes);
+	//~ printf("Modifique os dados da música: ");
+	//~ printf("\nNome: ");
+	//~ scanf(" %[^\n]", mod->info->titulo);
+	//~ printf("Artista: ");
+	//~ scanf(" %[^\n]", mod->info->artista);
+	//~ printf("Letra: ");
+	//~ scanf(" %[^\n]", mod->info->letra);
+	//~ printf("Código: ");
+	//~ scanf("%d", &mod->info->codigo);
+	//~ printf("Execuções: ");
+	//~ scanf("%d", &mod->info->execucoes);
 }
 
 nodoD *buscaNomeD(descritorD *lista, char nome[256], int op){
@@ -251,7 +251,6 @@ nodoD *buscaCodD(descritorD *lista, int cod){
 	}
 	else{
 		nodoD *get = lista->inicio;
-		int encontrado = 0;
 		
 			while(get != NULL){	
 				if(cod == get->info->codigo){
