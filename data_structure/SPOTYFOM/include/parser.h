@@ -8,5 +8,7 @@
 #include "LSE.h"
 
 void carregaArquivo(char nome[256], descritorS *listaSE);
+void carregaBackup(char nome[256], descritorS *listaSE);
+void salvar_acervo(descritorS *listaSE, char nome[256]);
 
 #endif

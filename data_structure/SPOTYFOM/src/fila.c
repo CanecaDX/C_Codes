@@ -142,7 +142,7 @@ void salvar_aleat(descritorF *fila){
 
 	fprintf(arquivo, "Playlist Aleatoria: \n\n");
 	while(aux != NULL){
-		fprintf(arquivo, "|Musica: %s \n |Artista: %s \n |Letra: %s \n |Codigo: %d \n |Execuções: %d\n\n",
+		fprintf(arquivo, " |Musica: %s \n |Artista: %s \n |Letra: %s \n |Codigo: %d \n |Execuções: %d\n\n",
 		        aux->info->titulo,
 		        aux->info->artista,
 		        aux->info->letra,	        

@@ -22,7 +22,7 @@ nodoS *removerS(descritorS *lista, int pos);
 void exibeListaS(descritorS *lista);
 nodoS *getS(descritorS *lista, int pos);
 nodoS *setS(descritorS *lista, int pos);
-nodoS *buscaNomeS(descritorS *lista, char nome[256], int op);
+nodoS *buscaNomeS(descritorS *lista, char nomeB[256], int op);
 nodoS *buscaCodS(descritorS *lista, int cod);
 
 #endif

@@ -47,13 +47,29 @@ int main(){
 				free(rem);
 				break;
 			case 1:
-				listaSE = criaDescS();
-				printf("Insira o nome do acervo a ser carregado: ");
-				scanf("%s", nome);
-				carregaArquivo(nome, listaSE);
-				if(listaSE->tamanho == 0){
-					printf("A lista está vazia!");
-					break;
+				printf("\n1_Acervo inicial.");
+				printf("\n2_Backup.");
+				printf("\nQual tipo de arquivo deseja carregar? ");
+				scanf("%d", &op);
+				switch(op){
+					case 1:
+						listaSE = criaDescS();
+						printf("\nInsira o nome do acervo a ser carregado: ");
+						scanf("%s", nome);
+						carregaArquivo(nome, listaSE);
+						if(listaSE->tamanho == 0){
+						printf("\nA lista está vazia!");
+						}
+						break;
+					case 2:
+						listaSE = criaDescS();
+						printf("\nInsira o nome do backupt a ser carregado: ");
+						scanf("%s", nome);
+						carregaBackup(nome, listaSE);
+						if(listaSE->tamanho == 0){
+						printf("\nA lista está vazia!");
+						}
+						break;
 				}
 				break;
 			case 2:
@@ -103,6 +119,7 @@ int main(){
 				}
 			
 				int bus = 0;
+				char nomeB[256];
 				printf("\n1_Nome");
 				printf("\n2_Artista");
 				printf("\n3_Código");
@@ -114,8 +131,8 @@ int main(){
 					case 1:
 							printf("\nInsira o nome da musica que deseja buscar: ");
 							setbuf(stdin, NULL);
-							scanf(" %[^\n]", nome);
-							rem = buscaNomeS(listaSE, nome, bus);
+							scanf(" %[^\n]", nomeB);
+							rem = buscaNomeS(listaSE, nomeB, bus);
 							
 							if(rem == NULL){
 								break;
@@ -191,10 +208,12 @@ int main(){
 								}
 								break;
 							case 2:
-								int cond2 = 0;
-								while(cond2 < fila->tamanho){
+								int tam = 0;
+								cond = 0;
+								tam = fila->tamanho;
+								while(cond < tam){
 									dequeue(fila, listaSE);
-									cond2++;
+									cond++;
 								}
 								break;
 						}
@@ -215,6 +234,12 @@ int main(){
 								}
 								break;
 							case 2:
+								int tam2 = 0, cond3 = 0;
+								tam2 = pilha->tamanho;
+								while(cond3 < tam2){
+									pop(pilha, listaSE);
+									cond3++;
+								}
 								break;
 						}
 						break;
@@ -239,6 +264,10 @@ int main(){
 							printf("\nA playlist não existe.");
 							break;
 						}
+						else if(fila->tamanho == 0){
+							printf("\nA playlist está vazia!");
+							break;
+						}
 						imprimeF(fila);
 						break;
 					case 3:
@@ -246,7 +275,11 @@ int main(){
 							printf("\nA playlist não existe.");
 							break;
 						}
-						imprimeF(pilha);
+						else if(pilha->tamanho == 0){
+							printf("\nA playlist está vazia!");
+							break;
+						}
+						imprimeP(pilha);
 						break;
 				}
 				break;
@@ -260,8 +293,8 @@ int main(){
 					printf("Não existem playlists criadas!");
 					break;
 				}
-				printf("\n1_Aleatória.");
-				printf("\n2_Pessoal.");
+				printf("\n1_Playlist Aleatória.");
+				printf("\n2_Playlist Pessoal.");
 				printf("\n3_Acervo completo.");
 				printf("\nO que deseja salvar? ");
 				setbuf(stdin, NULL);
@@ -276,11 +309,12 @@ int main(){
 								scanf(" %[^\n]", nomePlay);
 								salvar_pessoal(pilha, nomePlay);
 							break;
-					}		
-				break;
-		}
+						case 3:
+							salvar_acervo(listaSE, nome);
+							break;
+					}	
+			}
 	}
-	
 	return 0;	
 }
 
