@@ -214,7 +214,7 @@ nodoS *buscaNomeS(descritorS *lista, char nome[256], int op){
 						printf("\n |Artista:   [%s]", aux->info->artista);
 						printf("\n |Letra da música: [%s]", aux->info->letra);
 						printf("\n |Código:    [%d]", aux->info->codigo);
-						//printf("\n |Execuções: [%d]", aux->info->execucoes);
+						printf("\n |Execuções: [%d]", aux->info->execucoes);
 						encontrou = 1;
 					}
 					aux = aux-> prox;

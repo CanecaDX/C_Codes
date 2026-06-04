@@ -12,8 +12,8 @@ int main(){
 	
 	//descritores
 	descritorS *listaSE = NULL;
-	descritorF *fila = NULL;
-	descritorP *pilha = NULL;
+	descritorF *fila = NULL; //aleatoria
+	descritorP *pilha = NULL; //pessoal
 	
 	int op = 1, pos = 0;
 	char nome[256];
@@ -24,9 +24,9 @@ int main(){
 	
 	while(op != 0){
 		printf("\n");
-		printf("\n------------------------------------");
-		printf("\n--------------SPOTYFOM--------------");
-		printf("\n------------------------------------");
+		printf("\n|------------------------------------|");
+		printf("\n|--------------SPOTYFOM--------------|");
+		printf("\n|------------------------------------|");
 		printf("\n0_ Encerra programa.");
 		printf("\n1_ Carregar acervo.");		
 		printf("\n2_ Criar playlists.");		
@@ -35,7 +35,7 @@ int main(){
 		printf("\n5_ Impressão.");
 		printf("\n6_Gerar relatórios");
 
-		printf("\n------------------------------------");
+		printf("\n-------------------------------------");
 		printf("\nInforme a ação desejada: ");
 		scanf("%d", &op);
 
@@ -45,6 +45,7 @@ int main(){
 				free(fila);
 				free(pilha);
 				free(rem);
+				printf("Encerrando...");
 				break;
 			case 1:
 				printf("\n1_Acervo inicial.");
@@ -78,6 +79,10 @@ int main(){
 					break;
 				}
 				
+				printf("\n");
+				printf("\n|------------------------------------|");
+				printf("\n|--------------PLAYLISTS-------------|");
+				printf("\n|------------------------------------|");
 				printf("\n1_Aleatória.");
 				printf("\n2_Pessoal.");
 				printf("\nDe que forma deseja criar a playlist? ");
@@ -85,30 +90,30 @@ int main(){
 				scanf("%d", &op);
 				switch(op){
 					case 1:
-							int qtd_m = 0;
-							printf("Digite a quantidade de músicas da playlist: ");
-							setbuf(stdin, NULL);
-							scanf("%d", &qtd_m);
-							if(qtd_m > listaSE->tamanho){
-								printf("Quantidade inválida!");
-								break;	
-							}
-							fila = randomiza(listaSE, qtd_m);
+						int qtd_m = 0;
+						printf("Digite a quantidade de músicas da playlist: ");
+						setbuf(stdin, NULL);
+						scanf("%d", &qtd_m);
+						if(qtd_m > listaSE->tamanho){
+							printf("Quantidade inválida!");
+							break;	
+						}
+						fila = randomiza(listaSE, qtd_m);
 						break;
 					case 2:
-							int cod = 1;
-							exibeListaS(listaSE);
-							pilha = criaDescP();
+						int cod = 1;
+						exibeListaS(listaSE);
+						pilha = criaDescP();
 							
-							printf("\nDigite 0 para parar de inserir músicas.\n");
-							while(cod != 0){
-								printf("\nDigite os codigos das músicas que deseja inserir na playlist: ");
-								setbuf(stdin, NULL);
-								scanf("%d", &cod);
-								inserePessoal(&pilha, listaSE, cod);
-							}
-							printf("\nPlaylist criada!\n");
-							imprimeP(pilha);
+						printf("\nDigite 0 para parar de inserir músicas.\n");
+						while(cod != 0){
+							printf("\nDigite os codigos das músicas que deseja inserir na playlist: ");
+							setbuf(stdin, NULL);
+							scanf("%d", &cod);
+							inserePessoal(&pilha, listaSE, cod);
+						}
+						printf("\nPlaylist criada!\n");
+						imprimeP(pilha);
 						break;
 				}
 				break;
@@ -117,7 +122,10 @@ int main(){
 					printf("A lista está vazia ou não existe!");
 					break;
 				}
-			
+				
+				printf("\n|------------------------------------|");
+				printf("\n|---------------BUSCAR---------------|");
+				printf("\n|------------------------------------|");
 				int bus = 0;
 				char nomeB[256];
 				printf("\n1_Nome");
@@ -129,63 +137,72 @@ int main(){
 				scanf("%d", &bus);
 				switch(bus){
 					case 1:
-							printf("\nInsira o nome da musica que deseja buscar: ");
-							setbuf(stdin, NULL);
-							scanf(" %[^\n]", nomeB);
-							rem = buscaNomeS(listaSE, nomeB, bus);
+						printf("\nInsira o nome da musica que deseja buscar: ");
+						setbuf(stdin, NULL);
+						scanf(" %[^\n]", nomeB);
+						rem = buscaNomeS(listaSE, nomeB, bus);
 							
-							if(rem == NULL){
-								break;
-							}
+						if(rem == NULL){
+							break;
+						}
 							
-							printf("\nMúsica com o nome solicitada: ");
-							printf("\n |Música:    [%s]", rem->info->titulo);
-							printf("\n |Artista:   [%s]", rem->info->artista);
-							printf("\n |Letra da música: [%s]", rem->info->letra);
-							printf("\n |Código:    [%d]", rem->info->codigo);
-							printf("\n |Execuções: [%d]", rem->info->execucoes);
+						printf("\nMúsica com o nome solicitada: ");
+						printf("\n |Música:    [%s]", rem->info->titulo);
+						printf("\n |Artista:   [%s]", rem->info->artista);
+						printf("\n |Letra da música: [%s]", rem->info->letra);
+						printf("\n |Código:    [%d]", rem->info->codigo);
+						printf("\n |Execuções: [%d]", rem->info->execucoes);
 						break;
 					case 2:
-							printf("Insira o nome do artista que deseja buscar: ");
-							setbuf(stdin, NULL);;
-							scanf(" %[^\n]", nome);
-							buscaNomeS(listaSE, nome, bus);
+						printf("Insira o nome do artista que deseja buscar: ");
+						setbuf(stdin, NULL);;
+						scanf(" %[^\n]", nome);
+						buscaNomeS(listaSE, nome, bus);
 						break;
 					case 3:
-							printf("Insira o código do artista que deseja buscar: ");
-							setbuf(stdin, NULL);
-							scanf("%d", &pos);
-							rem = buscaCodS(listaSE, pos);	
+						printf("Insira o código do artista que deseja buscar: ");
+						setbuf(stdin, NULL);
+						scanf("%d", &pos);
+						rem = buscaCodS(listaSE, pos);	
 							
-							if(rem == NULL){
-								break;
-							}
-							printf("\nMúsica com o codigo solicitado: ");
-							printf("\n |Música:    [%s]", rem->info->titulo);
-							printf("\n |Artista:   [%s]", rem->info->artista);
-							printf("\n |Letra da música: [%s]", rem->info->letra);
-							printf("\n |Código:    [%d]", rem->info->codigo);
-							printf("\n |Execuções: [%d]", rem->info->execucoes);
+						if(rem == NULL){
+							break;
+						}
+						printf("\nMúsica com o codigo solicitado: ");
+						printf("\n |Música:    [%s]", rem->info->titulo);
+						printf("\n |Artista:   [%s]", rem->info->artista);
+						printf("\n |Letra da música: [%s]", rem->info->letra);
+						printf("\n |Código:    [%d]", rem->info->codigo);
+						printf("\n |Execuções: [%d]", rem->info->execucoes);
 						break;
 					case 4:
-							printf("Insira a posicao do elemento que deseja buscar: ");
-							setbuf(stdin, NULL);
-							scanf("%d", &pos);
-							rem = getS(listaSE, pos);
+						printf("Insira a posicao do elemento que deseja buscar: ");
+						setbuf(stdin, NULL);
+						scanf("%d", &pos);
+						rem = getS(listaSE, pos);
 							
-							if(rem == NULL){
-								break;
-							}
-							printf("\nMúsica da posição solicitada: ");
-							printf("\n |Música:    [%s]", rem->info->titulo);
-							printf("\n |Artista:   [%s]", rem->info->artista);
-							printf("\n |Letra da música: [%s]", rem->info->letra);
-							printf("\n |Código:    [%d]", rem->info->codigo);
-							printf("\n |Execuções: [%d]", rem->info->execucoes);
+						if(rem == NULL){
+							break;
+						}
+						
+						printf("\nMúsica da posição solicitada: ");
+						printf("\n |Música:    [%s]", rem->info->titulo);
+						printf("\n |Artista:   [%s]", rem->info->artista);
+						printf("\n |Letra da música: [%s]", rem->info->letra);
+						printf("\n |Código:    [%d]", rem->info->codigo);
+						printf("\n |Execuções: [%d]", rem->info->execucoes);
 						break;
 				}
 				break;
 			case 4:
+				if(listaSE == NULL){
+					printf("A lista está vazia ou não existe!");
+					break;
+				}
+				
+				printf("\n|------------------------------------|");
+				printf("\n|--------------EXECUTAR--------------|");
+				printf("\n|------------------------------------|");
 				printf("\n1_Aleatória.");
 				printf("\n2_Pessoal.");
 				printf("\nQual playlist deseja exsecutar? ");
@@ -193,6 +210,15 @@ int main(){
 				scanf("%d", &op);
 				switch(op){
 					case 1:
+						if(!fila){
+						printf("\nA playlist não existe.");
+						break;
+						}
+						else if(fila->tamanho == 0){
+							printf("\nA playlist está vazia!");
+							break;
+						}
+					
 						printf("\n1_Uma por uma.");
 						printf("\n2_Todas.");
 						printf("\nDe que forma deseja executar? ");
@@ -225,6 +251,14 @@ int main(){
 						scanf("%d", &op);
 						switch(op){
 							case 1:
+								if(!pilha){
+								printf("\nA playlist não existe.");
+								break;
+								}
+								else if(pilha->tamanho == 0){
+									printf("\nA playlist está vazia!");
+									break;
+								}
 								int cond2 = 1;
 								printf("\ninsira 0 para parar de executar e 1 para continuar executando.\n");
 								while(cond2 != 0){
@@ -250,6 +284,10 @@ int main(){
 					printf("A lista está vazia ou não existe!");
 					break;
 				}
+				
+				printf("\n|------------------------------------|");
+				printf("\n|--------------EXIBIÇÃO--------------|");
+				printf("\n|------------------------------------|");
 				printf("\n1_Acervo completo.");
 				printf("\n2_Playlist aleatoria.");
 				printf("\n3_Playlist pessoal.");
@@ -289,10 +327,9 @@ int main(){
 					break;
 				}
 				
-				if((!fila) && (!pilha)){
-					printf("Não existem playlists criadas!");
-					break;
-				}
+				printf("\n|------------------------------------|");
+				printf("\n|-------------RELATÓRIOS-------------|");
+				printf("\n|------------------------------------|");
 				printf("\n1_Playlist Aleatória.");
 				printf("\n2_Playlist Pessoal.");
 				printf("\n3_Acervo completo.");
@@ -301,9 +338,17 @@ int main(){
 				scanf("%d", &op);
 					switch(op){
 						case 1:
+							if(!fila){
+								printf("A playlist não existe");
+							break;
+							}
 							salvar_aleat(fila);
 							break;
 						case 2:
+							if(!pilha){
+								printf("A playlist não existe");
+							break;
+							}
 							char nomePlay[256];
 								printf("Insira o nome da playlist: ");
 								scanf(" %[^\n]", nomePlay);
