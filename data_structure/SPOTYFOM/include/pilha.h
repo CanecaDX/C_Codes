@@ -18,7 +18,7 @@ typedef struct descritorP{
 
 descritorP *criaDescP(void);
 nodoP *criaNodoP(musica *song);
-void inserePessoal(descritorP **pilha, descritorS *listaSE, int cod);
+void inserePessoal(descritorP *pilha, descritorS *listaSE, int cod);
 void push(descritorP *pilha, nodoP *novoE);
 nodoP *pop(descritorP *pilha, descritorS *listaSE);
 int emptyP(descritorP *pilha);

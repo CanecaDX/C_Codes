@@ -208,7 +208,7 @@ nodoS *buscaNomeS(descritorS *lista, char nome[256], int op){
 					char artistaMin[256];
 					strcpy(artistaMin, aux->info->artista);
 					converteMinuscula(artistaMin);
-					if(strcmp(minuscula, artistaMin) == 0){	
+					if(strcmp(minuscula, artistaMin) == 0){
 						printf("\n");
 						printf("\n |Música:    [%s]", aux->info->titulo);
 						printf("\n |Artista:   [%s]", aux->info->artista);

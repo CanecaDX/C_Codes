@@ -21,7 +21,7 @@ nodoP *criaNodoP(musica *song){
 	return novaMusica;
 }
 
-void inserePessoal(descritorP **pilha, descritorS *listaSE, int cod){
+void inserePessoal(descritorP *pilha, descritorS *listaSE, int cod){
 	
 	nodoP *elemento = NULL;
 	nodoS *aux = listaSE->inicio;
@@ -36,7 +36,7 @@ void inserePessoal(descritorP **pilha, descritorS *listaSE, int cod){
 			strcpy(song->letra, aux->info->letra);
 			
 			elemento = criaNodoP(song);
-			push(*pilha, elemento);
+			push(pilha, elemento);
 			return;
 		}
 		aux = aux->prox;

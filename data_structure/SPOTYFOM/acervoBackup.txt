@@ -1278,7 +1278,7 @@ Bonde do Forro;15722;AI QUE PERIGO;Ela e top e sensacao ta descendo ate;0
 Bonde do Role e Caetano Veloso;15843;BABY DON T DENY IT (BABY DOLL DE NYLON);Baby don t deny it you know you wanna dance;0
 Bonde Do Tigrao;6053;CEROL NA MAO;Quer dancar quer dancar o Tigrao vai te ;0
 Bonde Do Tigrao;6105;O BAILE TODO;Uh uh So as cachorras uh uh ;0
-Boney M.;4760;RIVERS OF BABYLON;By the rivers of Babylon there we ;1
+Boney M.;4760;RIVERS OF BABYLON;By the rivers of Babylon there we ;0
 Bonnie Tyler;4985;TOTAL ECLIPSE OF THE HEART;Turn around ;0
 Bonnie Tyler;9129;IT S A HEARTACHE;It s a heartache nothing but a heartache ;0
 Boston ;9230;MORE THAN A FEELING ; I looked out this morning ;0
@@ -1572,7 +1572,7 @@ Capital Inicial E Kiko Zambianchi;6028;PRIMEIROS ERROS;Meu caminho e cada manha 
 Capital Inicial Zelia Duncan;1584;EU VOU ESTAR;Eu nao vou pro inferno;0
 Captain and Tennille;5939;LOVE WILL KEEP US TOGETHER;Love love will keep us together;0
 Captain and Tennille;2523;DO THAT TO ME ONE MORE TIME;Do that to me one more time;0
-Carl Douglas;5930;KUNG FU FIGHTING;Oh oh oh oh;1
+Carl Douglas;5930;KUNG FU FIGHTING;Oh oh oh oh;0
 Carl Perkins;4868;BLUE SUEDE SHOES;Well it s one for the money ;0
 Carlinhos Brown;7632;MARES DE TI;Se tropecar meus pes cansados;0
 Carlinhos Brown;15376;FAZ UM;E e  Eu sou um brasileiro e mando um;0
@@ -2026,7 +2026,7 @@ Cidade Negra;3889;O ERE;uh uh uh uh uh uh uh uh pra;0
 Cidade Negra;4212;SABADO A NOITE;Todo mundo espera alguma coisa;0
 Cidade Negra;4269;EU TAMBEM QUERO BEIJAR;A flor do desejo e do maracuja ;0
 Cidade Negra;4301;A COR DO SOL;Amor estamos atravessando ;0
-Cidade Negra;6001;A FLECHA E O VULCAO;Se me chamar eu vou agora ;1
+Cidade Negra;6001;A FLECHA E O VULCAO;Se me chamar eu vou agora ;0
 Cidade Negra;6146;NA MORAL;Ha ah ah ah de se respeitar ;0
 Cidade Negra;6374;GIRASSOL;Tchuru  A favor da comunidade ;0
 Cidade Negra;6482;A ESTRADA;Voce nao sabe o quanto eu caminhei ;0
@@ -2197,7 +2197,7 @@ Creed;4992;WITH ARMS WIDE OPEN;Well I just heard the news today ;0
 Creed;5943;MY OWN PRISION;A court is in session a verdict is in;0
 Creed;19300;MY SACRIFICE;Hello my friend we meet again it s been awhile;0
 Creed;19706;ONE LAST BREATH;Please come now I think I m falling;0
-Creed;19462;DON T STOP DANCING;At times life is wicked and I just can t see;1
+Creed;19462;DON T STOP DANCING;At times life is wicked and I just can t see;0
 Cristiano Araujo;2795;FAZENDO BARA BERE;Bara bara bara bere bere bere;0
 Cristiano Araujo;15180;MENTE PRA MIM;Olha dentro dos meus olhos e me conta;0
 Cristiano Araujo;15231;FRASES DE FOGO;Por que sera que o meu mundo fica tao confuso;0
@@ -2806,12 +2806,12 @@ Elis Regina;4063;ALO ALO MARCIANO;Alo, alo marciano;0
 Elis Regina;4182;CASA NO CAMPO;Eu quero uma casa no campo;0
 Elis Regina;4219;VELHA ROUPA COLORIDA;Voce nao sente, nao ve;0
 Elis Regina;4326;O MESTRE SALA DOS MARES;Ha muito tempo nas aguas da Guanabara ;0
-Elis Regina;4415;UPA NEGUINHO;Upa neguinho na estrada upa pra la ;1
+Elis Regina;4415;UPA NEGUINHO;Upa neguinho na estrada upa pra la ;0
 Elis Regina;4425;ATRAS DA PORTA;Quando olhaste bem nos olhos meus ;0
 Elis Regina;6051;CARTOMANTE;Nos dias de hoje e bom que se proteja ;0
 Elis Regina;6470;O QUE FOI FEITO DEVERA;O que foi feito amigo ;0
 Elis Regina;6525;APRENDENDO A JOGAR;Vivendo e aprendendo a jogar ;0
-Elis Regina;6578;NADA SERA COMO ANTES;Eu ja estou com o pe nessa estrada ;1
+Elis Regina;6578;NADA SERA COMO ANTES;Eu ja estou com o pe nessa estrada ;0
 Elis Regina;6852;E COM ESSE QUE EU VOU;E com esse que eu vou sambar ate cair;0
 Elis Regina;7069;BASTA DE CLAMARES INOCENCIA;Basta de clamares inocencia;0
 Elis Regina;7078;CAI DENTRO;Ate que eu vou gostar;0
@@ -3432,7 +3432,7 @@ Gaby Amarantos;16345;SOU+EU;Que adianta ser sarado que adianta ter carrao;0
 Gaby Amarantos e Monobloco;15559;TODO MUNDO;Vem que vai comecar um mundo num so lugar;0
 Gackt;18341;LAST SONG;Ate mo naku hitori samayoi aruki;0
 Gal Costa;7418;PRA MACHUCAR MEU CORAcAO;Ta fazendo um ano e meio amor;0
-Gal Costa;7705;TE ADORAR;Nada mais me atrai;1
+Gal Costa;7705;TE ADORAR;Nada mais me atrai;0
 Gal Costa;7917;CAMINHOS CRUZADOS;Quando um coracao;0
 Gal Costa;9406;CANTA BRASIL;As selvas te deram nas noites;0
 Gal Costa;1595;MAR E SOL;Um Sol eu sou;0
@@ -4537,7 +4537,7 @@ Joana E Fagner;3157;MEU PRIMEIRO AMOR;Saudade palavra triste;0
 Joanna;1365;NADA SERIO;Nada serio era sempre assim;0
 Joao Bosco;7373;LINHA DE PASSE;Toca de tatu;0
 Joao Bosco;7330;DE FRENTE PRO CRIME;Ta la o corpo estendido no chao;0
-Joao Bosco;1309;QUANDO O AMOR ACONTECE;Coracao sem perdao;1
+Joao Bosco;1309;QUANDO O AMOR ACONTECE;Coracao sem perdao;0
 Joao Bosco;4046;PAPEL MARCHE;Cores do mar, festa do sol;0
 Joao Bosco;6462;JADE;Aqui meu irmao ela e coisa rara ;0
 Joao Bosco;6612;KID CAVAQUINHO;Oi que foi so pegar no cavaquinho ;0
@@ -4728,7 +4728,7 @@ Jorge Benjor;3721;QUE MARAVILHA;La fora esta chovendo;0
 Jorge Benjor;3722;QUE PENA;Ela ja nao gosta mais de mim;0
 Jorge Benjor;3758;MAS QUE NADA;O aria raio oba oba oba;0
 Jorge Benjor;3795;FIO MARAVILHA;Novamente ele chegou com;0
-Jorge Benjor;3852;PAIS TROPICAL;Moro num pais tropical abencoado;1
+Jorge Benjor;3852;PAIS TROPICAL;Moro num pais tropical abencoado;0
 Jorge Benjor;6628;O TELEFONE TOCOU NOVAMENTE;O telefone tocou novamente ;0
 Jorge Benjor;6726;CADE TEREZA;Cade Tereza onde anda minha Tereza ;0
 Jorge Benjor;6944;MULHER BRASILEIRA;Mulher brasileira aonde e que esta ;0
@@ -4792,7 +4792,7 @@ Jorge Vercilo;7637;MELHOR LUGAR;Se fosse por mim eu ficava;0
 Jorge Vercilo;7616;HIMALAIA;O mundo inteiro esta guardado em mim;0
 Jorge Vercilo;7626;LIVRE;Um no Leme outro no Leblon;0
 Jorge Vercilo;7672;PENSO EM TI;Eu queria nao sentir essa saudade;0
-Jorge Vercilo;7720;UM SEGREDO E UM AMOR;Um segredo e um amor o que sera maio;1
+Jorge Vercilo;7720;UM SEGREDO E UM AMOR;Um segredo e um amor o que sera maio;0
 Jorge Vercilo;9356;VELA DE ACENDER VELA DE NAVEGAR;Ve la me faz crescer;0
 Jorge Vercilo;9447;ELA UNE TODAS AS COISAS;Ela une todas as coisas como eu pode;0
 Jorge Vercilo;1163;DEVANEIO;Mergulhei no mar e nao dava pe;0

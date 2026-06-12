@@ -23,11 +23,9 @@ nodoF *criaNodoF(musica *song){
 	return novaMusica;
 }
 
-descritorF *randomiza(descritorS *listaSE, int qtd_m){
+void randomiza(descritorF *fila, descritorS *listaSE, int qtd_m){
 	
 	nodoF *elemento = NULL;
-	descritorF *fila = NULL;
-	fila = criaDescF();
 	
 	int *selecionadas = (int*)calloc (qtd_m, sizeof(int));
 	srand(time(NULL));
@@ -54,10 +52,7 @@ descritorF *randomiza(descritorS *listaSE, int qtd_m){
 			cont++;
 		}
 	}
-	printf("\nPlaylist criada!");
-	imprimeF(fila);
 	free(selecionadas);
-	return fila;
 }
 
 void enqueue(descritorF *fila, nodoF *novoE){
