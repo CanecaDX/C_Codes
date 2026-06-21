@@ -11,6 +11,7 @@ descritor *criaDesc(void){
 	novoDesc->fim = NULL;
 	
 	return novoDesc;			
+	
 }
 
 nodo *criaNodo(void){
@@ -251,7 +252,6 @@ nodo *buscaCod(descritor *lista, int cod){
 	}
 	else{
 		nodo *get = lista->inicio;
-		int encontrado = 0;
 		
 			while(get != NULL){	
 				if(cod == get->info->codigo){

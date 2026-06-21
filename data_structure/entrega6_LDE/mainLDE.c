@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -48,6 +47,10 @@ int main(){
 				printf("Música inserida na lista.");
 				break;
 			case 3:
+				if(lista == NULL){
+					printf("Lista não existe!");
+					break;
+				}
 				if(lista->tamanho == 0){
 					printf("A lista está vazia!");
 					break;
@@ -55,12 +58,24 @@ int main(){
 				exibeLista(lista);
 				break;
 			case 4:
+				if(lista == NULL){
+					printf("Lista não existe!");
+					break;
+				}
 				printf("Insira a posicao do elemento que deseja modificar: ");
 				setbuf(stdin, NULL);
 				scanf("%d", &pos);
 				set(lista, pos);
 				break;
 			case 5:
+				if(lista == NULL){
+					printf("Lista não existe!");
+					break;
+				}
+				if(lista->tamanho == 0){
+					printf("A lista está vazia!");
+					break;
+				}
 				int bus = 0;
 				printf("\n1_Nome");
 				printf("\n2_Artista");
@@ -129,6 +144,10 @@ int main(){
 				}
 				break;
 			case 6:
+				if(lista == NULL){
+					printf("Lista não existe!");
+					break;
+				}
 				printf("Insira a posicao que deseja remover da lista: ");
 				setbuf(stdin, NULL);
 				scanf("%d", &pos);
@@ -144,6 +163,10 @@ int main(){
 				printf("\n |Letra da música: [%s]", rem->info->letra);
 				printf("\n |Código:    [%d]", rem->info->codigo);
 				printf("\n |Execuções: [%d]", rem->info->execucoes);
+				break;
+			default:
+				printf("\nOpção inválida!");
+				break;
 		}
 	}
 	

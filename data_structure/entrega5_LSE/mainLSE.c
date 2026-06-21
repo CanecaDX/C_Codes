@@ -143,6 +143,10 @@ int main(){
 				printf("\n |Letra da música: [%s]", rem->info->letra);
 				printf("\n |Código:    [%d]", rem->info->codigo);
 				printf("\n |Execuções: [%d]", rem->info->execucoes);
+				break;
+			default:
+				printf("\nOpção inválida!");
+				break;
 		}
 	}
 	
