@@ -2068,7 +2068,7 @@ Claudia Leite;1405;AS MASCARAS;As mascaras vao cair;0
 Claudia Leite e Dudu Nobre;7898;ACONTECE QUE EU SOU BAIANO;Acontece que eu sou baiana;0
 Claudia Leite e Travis McCoy;1586;FAMOSA (BILLIONAIRE);Eu quero ser muito famosa;0
 Claudia Leitte;1661;AGUA;Ioi ioi ioi;0
-Claudia Leitte;2665;BEIJAR NA BOCA;Eu estava numa vida de horror com a cabeca;0
+Claudia Leitte;2665;BEIJAR NA BOCA;Eu estava numa vida de horror com a cabeca;1
 Claudia Leitte;2751;PRETO;Preto se voce me der amor tudo de mim;0
 Claudia Leitte;15036;LARGADINHO;Eu ja falei pra voce deixar de maresia;0
 Claudia Leitte;15318;TARRAXINHA;Virou mexeu tirou ondinha vai na ;0
@@ -2349,7 +2349,7 @@ Daryl Hall e John Oates;19113;KISS ON MY LIST;My friends wonder why I call you a
 Dave Maclean;19800;WE SAID GOODBYE;You ll never find another guy;0
 Dave McLean;4940;ME AND YOU;Give me only a smile ;0
 Davi Sacer;2969;BEM SUPREMO;Eu vim Te adorar oh Senhor vem me ;0
-David Bowie;2582;AS THE WORLD FALLS DOWN;There s such a sad love deep in your eyes;0
+David Bowie;2582;AS THE WORLD FALLS DOWN;There s such a sad love deep in your eyes;2
 David Bowie;19269;STARMAN;Didn t know what time it was and the lights were low;0
 David Bowie;19388;LET S DANCE;Ahhh ahhh ahhh ahhh Let s dance;0
 David Bowie;19397;SPACE ODDITY;Ground control to Major Tom;0
@@ -2489,7 +2489,7 @@ Dilsinho;16334;TROVAO;Louco pra te amar chego pro jantar;0
 Dilsinho e Ivete Sangalo;16385;IOIO;Vai pode fingir que nao e minha agora;0
 Dino E Deny;6453;CORUJA;Coruja o nome que eu dei aquele ;0
 Dino Franco e Mourai;15894;CHEIRO DE RELVA;Como e bonito estender se no verao;0
-Diogo Nogueira;1132;MALANDRO E MALANDRO E MANE E MANE;Malandro e malandro e mane e mane;0
+Diogo Nogueira;1132;MALANDRO E MALANDRO E MANE E MANE;Malandro e malandro e mane e mane;1
 Diogo Nogueira;1739;PRA QUE DISCUTIR COM MADAME;Madame diz que a raca nao melhora ;0
 Diogo Nogueira;1990;BATENDO A PORTA;Como e que vai saude boa;0
 Diogo Nogueira;2684;CHEGOU O AMOR;Ela chegou no meu samba bonita de ver;0
@@ -2779,7 +2779,7 @@ Elis Regina;7911;BOA NOITE AMOR;Boa noite amor meu grande amor;0
 Elis Regina;9384;ALTOS E BAIXOS;Foi quem sabe esse disco;0
 Elis Regina;9615;AOS NOSSOS FILHOS;Perdoem a cara amarrada;0
 Elis Regina;1320;VOU DEITAR E ROLAR;Nao venha querer se consolar;0
-Elis Regina;3131;MADALENA;Oh Madalena o meu peito percebeu;0
+Elis Regina;3131;MADALENA;Oh Madalena o meu peito percebeu;1
 Elis Regina;3275;TRISTE;Triste e viver na solidao;0
 Elis Regina;3183;O BEBADO E A EQUILIBRISTA;Caia a tarde feito um viaduto;0
 Elis Regina;3240;ROMARIA;E de sonho e de po o destino de um so;0
@@ -2804,9 +2804,9 @@ Elis Regina;3611;COMO NOSSOS PAIS;Nao quero lhe falar meu grande amor;0
 Elis Regina;3729;TIRO AO ALVARO;De tanto levar frechada do teu olhar;0
 Elis Regina;4063;ALO ALO MARCIANO;Alo, alo marciano;0
 Elis Regina;4182;CASA NO CAMPO;Eu quero uma casa no campo;0
-Elis Regina;4219;VELHA ROUPA COLORIDA;Voce nao sente, nao ve;0
+Elis Regina;4219;VELHA ROUPA COLORIDA;Voce nao sente, nao ve;1
 Elis Regina;4326;O MESTRE SALA DOS MARES;Ha muito tempo nas aguas da Guanabara ;0
-Elis Regina;4415;UPA NEGUINHO;Upa neguinho na estrada upa pra la ;0
+Elis Regina;4415;UPA NEGUINHO;Upa neguinho na estrada upa pra la ;1
 Elis Regina;4425;ATRAS DA PORTA;Quando olhaste bem nos olhos meus ;0
 Elis Regina;6051;CARTOMANTE;Nos dias de hoje e bom que se proteja ;0
 Elis Regina;6470;O QUE FOI FEITO DEVERA;O que foi feito amigo ;0
@@ -3603,7 +3603,7 @@ Gino e Geno;7971;FREIO DE MAO;Casou casei complicou compliquei;0
 Gino e Geno;9584;A SAUDADE TA PEGANDO;A saudade ta pegando;0
 Gino e Geno;15493;MO DEUSO;Por causa de umas bestage tao besta;0
 Gino E Geno;6412;ELA CHOROU DE AMOR;Ela sentiu saudade ela me ligou ;0
-Gino E Geno;6767;CARA DE BOI;Eu to cansado da fazenda e de ver ;0
+Gino E Geno;6767;CARA DE BOI;Eu to cansado da fazenda e de ver ;2
 Gino E Geno;6885;ACIDENTE DE AMOR;Ela chegou correndo demais ;0
 Gino E Geno;7127;EU JA FUI DE VOCE;Tem gente que se apaixona;0
 Gino Paoli;3682;SAPORE DI SALE;Sapore di sale sapore di mare;0
@@ -3636,7 +3636,7 @@ Go Hiromi;5378;IENAIYO;Warai suguita kimiga namida ;0
 Go Hiromi;18252;GOLDFINGER  99;Furachi na rythm de giratsuku mune wa;0
 Godai Natsuko;5248;KOI ZANGUE ;Are wa shitigatsu semishigure;0
 Godai Natsuko;5374;HITORI ZAKE;Anata to kata o narabete nonda ;0
-Godai Natsuko;5398;KITA NO FUNAUTA;Yamasse ga hoete umi nari nakeba ;0
+Godai Natsuko;5398;KITA NO FUNAUTA;Yamasse ga hoete umi nari nakeba ;1
 Godai Natsuko;5400;KOI BANKA;Higure madikano eki ura doori ;0
 Godai Natsuko;5418;MIGAERI BIDIN;Koi wa karissome nari yuki makasse ;0
 Godai Natsuko;5465;SETCHUUKA;Kazeni kazeni muretobu ;0
@@ -3781,7 +3781,7 @@ Guilherme e Santiago;1379;E DAI;E dai;0
 Guilherme e Santiago;1524;AMIZADE SINCERA;A amizade sincera e um santo remedi;0
 Guilherme e Santiago;1533;NA HORA CERTA;Na hora certa ainda vou te encontrar;0
 Guilherme e Santiago;1613;NO LIMITE;Nao da mais pra esconder essa paixao;0
-Guilherme e Santiago;1730;SAFADA, CACHORRA, BANDIDA;Safada cachorra bandida da o fora da ;0
+Guilherme e Santiago;1730;SAFADA, CACHORRA, BANDIDA;Safada cachorra bandida da o fora da ;1
 Guilherme e Santiago;1750;TA SE ACHANDO;Parou passou se foi sua paixao ;0
 Guilherme e Santiago;1826;EXTASE DO AMOR;Droga viciosa delirante;0
 Guilherme e Santiago;1958;TUDO TEM UM PORQUE;Pensando bem nao me arrependo;0
@@ -4302,7 +4302,7 @@ Ivan Lins;7071;BILHETE;Quebrei o teu prato tranquei o meu ;0
 Ivan Lins;7163;LEMBRA DE MIM;Lembra de mim;0
 Ivan Lins ;7380;ME DEIXA EM PAZ;Me deixa em paz;0
 Ivan Lins ;7406;PASSARELA NO AR;Quando ela passa por mim;0
-Ivan Lins ;7338;DINORAH, DINORAH;Quando a turma reunia alguem sempre;0
+Ivan Lins ;7338;DINORAH, DINORAH;Quando a turma reunia alguem sempre;2
 Ivan Lins ;6601;ABRE ALAS;Abre alas pra minha folia ;0
 Ivan Lins ;7155;ILUMINADO;O amor tem feito coisas;0
 Ivan Lins ;7270;VELAS IcADAS;Seu coracao e um barco de velas icad;0
@@ -4858,7 +4858,7 @@ Jota Quest e Anitta e Nile Rodgers;15964;BLECAUTE;Voce chegou quase me matou;0
 Jota Quest e Marcelo Falcao;16335;VOCE PRECISA DE ALGUEM;Se quiser parar pra me dar conselhos;0
 Jota Quest e Projota;16077;UM DIA PRA NAO SE ESQUECER (SUNRISE);Hey irmao hoje era pra ser;0
 Journey;19171;DON T STOP BELIEVIN ;Just a small town girl Livin  in a lonely world;0
-Jovem Guarda;3237;RITMO DA CHUVA;Olho para a chuva que nao quer cessar;0
+Jovem Guarda;3237;RITMO DA CHUVA;Olho para a chuva que nao quer cessar;1
 Joyce;7969;FORA DE HORA;Fora de hora;0
 Joyce;1448;CLAREANA;Um coracao de mel;0
 Juan Luis Guerra;3239;ROMANCE ROSA;Eu te dei uma rosa que encontrei;0

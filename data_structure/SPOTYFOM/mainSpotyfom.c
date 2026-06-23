@@ -11,7 +11,7 @@
 int main(){
 	
 	//descritores
-	descritorS *listaSE = NULL;
+	descritorS *listaSE = NULL; //acervo
 	descritorF *fila = NULL; //aleatoria
 	descritorP *pilha = NULL; //pessoal
 	
@@ -32,7 +32,7 @@ int main(){
 		printf("\n2_Criar playlists.");		
 		printf("\n3_Buscar musica.");
 		printf("\n4_Executar uma playlist.");
-		printf("\n5_Impressão.");
+		printf("\n5_Exibição.");
 		printf("\n6_Gerar relatórios.");
 
 		printf("\n-------------------------------------");
@@ -64,12 +64,15 @@ int main(){
 							break;
 						case 2:
 							listaSE = criaDescS();
-							printf("\nInsira o nome do backupt a ser carregado: ");
+							printf("\nInsira o nome do backup a ser carregado: ");
 							scanf("%s", nome);
 							carregaBackup(nome, listaSE);
 							if(listaSE->tamanho == 0){
 							printf("\nA lista está vazia!");
 							}
+							break;
+						default:
+							printf("\nOpção inválida!");
 							break;
 					}
 					break;
@@ -116,6 +119,9 @@ int main(){
 							}
 							imprimeP(pilha);
 							printf("\nPlaylist criada!\n");
+							break;
+						default:
+							printf("\nOpção inválida!");
 							break;
 					}
 					break;
@@ -194,6 +200,9 @@ int main(){
 							printf("\n |Código:    [%d]", rem->info->codigo);
 							printf("\n |Execuções: [%d]", rem->info->execucoes);
 							break;
+						default:
+							printf("\nOpção inválida!");
+							break;
 					}
 					break;
 				case 4:
@@ -207,7 +216,7 @@ int main(){
 					printf("\n|------------------------------------|");
 					printf("\n1_Aleatória.");
 					printf("\n2_Pessoal.");
-					printf("\nQual playlist deseja exsecutar? ");
+					printf("\nQual playlist deseja executar? ");
 					setbuf(stdin, NULL);
 					scanf("%d", &op);
 					switch(op){
@@ -244,7 +253,7 @@ int main(){
 										}
 									}
 									printf("\nPlaylist executada!");
-									break;
+										break;
 								case 2:
 									cond = 0;	
 									int tam2 = 0;
@@ -254,7 +263,10 @@ int main(){
 										cond++;
 									}
 									printf("\nPlaylist executada!");
-									break;
+										break;
+								default:
+									printf("\nOpção inválida!");
+										break;
 							}
 							break;
 						case 2:
@@ -288,17 +300,24 @@ int main(){
 										} 
 									}
 									printf("\nPlaylist Executada!\n");
-									break;
+										break;
 								case 2:
 									s2 = 0;
+									tam2 = pilha->tamanho;
 									while(s2 < tam2){
 										pop(pilha, listaSE);
 										s2++;
 									}
 									printf("\nPlaylist executada!");
-									break;
+										break;
+								default:
+									printf("\nOpção inválida!");
+										break;
 							}
-							break;
+							
+						default:
+								printf("\nOpção inválida!");
+									break;		
 					}
 					break;
 				case 5:
@@ -329,7 +348,7 @@ int main(){
 								break;
 							}
 							imprimeF(fila);
-							break;
+								break;
 						case 3:
 							if(!pilha){
 								printf("\nA playlist não existe.");
@@ -340,7 +359,10 @@ int main(){
 								break;
 							}
 							imprimeP(pilha);
-							break;
+								break;
+						default:
+							printf("\nOpção inválida!");
+								break;
 					}
 					break;
 				case 6:
@@ -378,6 +400,9 @@ int main(){
 								break;
 							case 3:
 								salvar_acervo(listaSE, nome);
+								break;
+							default:
+								printf("\nOpção inválida!");
 								break;
 						}	
 					break;
