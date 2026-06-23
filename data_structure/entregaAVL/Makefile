@@ -9,5 +9,5 @@ run: index
 clear:
 	#limpando arquivo
 	rm mainAVL.o
-	rm AVL.o
+	rm avl.o
 	rm exec
