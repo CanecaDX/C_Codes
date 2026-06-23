@@ -42,31 +42,46 @@ nodo *removeChave(nodo *atual, int chave){
 		return NULL;
 	
 	if(atual->chave == chave){
-		printf("Chave encontrada!");
+		printf("\nChave encontrada!");
 		if((atual->direito == NULL) && (atual->esquerdo == NULL)){ //folha
-			printf("\nFolha removida.");
+			printf(" (Sem filhos (folha))\n");
 			free(atual);
 			return NULL;
 		}
 		else{
 			if(atual->direito == NULL){ //apenas filho esquerdo
-				printf("\nApenas filho esquerdo.");
+				printf(" (Apenas filho esquerdo\n)");
 				nodo *temp = atual->esquerdo;
 				temp->pai = atual->pai;
 				free(atual);
 				return temp;
 			}
 			else if(atual->esquerdo == NULL){ //apenas filho direito
-				printf("\nApenas filho direito.");
+				printf(" (Apenas filho direito\n)");
 				nodo *temp = atual->direito;
 				temp->pai = atual->pai;
 				free(atual);
 				return temp;
 			}	
 			else if((atual->direito != NULL) && (atual->esquerdo != NULL)){ //dois filhos
-				//AINDA NÃO FIZ 
+				printf(" (Removendo nó com 2 filhos)\n");
+                
+                // encontra o sucessor
+                nodo *sucessor = atual->direito;
+                while(sucessor->esquerdo != NULL){
+                    sucessor = sucessor->esquerdo;
+                }
+                
+                //substitui a chave
+                atual->chave = sucessor->chave;
+                
+                //remove o sucessor recursivamente
+                atual->direito = removeChave(atual->direito, sucessor->chave);
+                if(atual->direito != NULL)
+                    atual->direito->pai = atual;
 			}
 		}
+		atual = balanceamento(atual); 
 		return atual;
 	}
 	else{

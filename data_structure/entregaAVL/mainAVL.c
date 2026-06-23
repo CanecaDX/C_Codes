@@ -29,6 +29,11 @@ while(op != 0){
 				printf("\nAVL criada!");
 				break;
 			case 2:
+				if(avlTree == NULL){
+					printf("\nA árvore não existe!");
+					break;
+				}
+				
 				printf("\nInsira a chave para inserir na arvore: ");
 				scanf("%d", &chave);
 				novo = criaNodo(chave);
@@ -37,14 +42,32 @@ while(op != 0){
 				printf("\nValor adicionado com sucesso");
 				break;
 			case 3:
+				if(avlTree == NULL){
+					printf("\nA árvore não existe!");
+					break;
+				}
+				else if(avlTree->raiz == NULL){
+					printf("\nA árvore está vazia!");
+					break;
+				}
+			
 				printf("\nInsira a chave que deseja remover da arvore: ");
 				scanf("%d", &chave);
 				avlTree->raiz = removeChave(avlTree->raiz, chave);
 				printf("\nChave removida: %d", chave);
 				printf("\nPre order: ");
-				Preorder(raiz);
+				Preorder(avlTree->raiz);
 				break;
 			case 4:
+				if(avlTree == NULL){
+					printf("\nA árvore não existe!");
+					break;
+				}
+				else if(avlTree->raiz == NULL){
+					printf("\nA árvore está vazia!");
+					break;
+				}
+			
 				int op2 = 1;
 				printf("\n1_ In Order.");
 				printf("\n2_ Pre Order.");
