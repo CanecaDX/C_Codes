@@ -12,7 +12,7 @@ descritorAVL *alocaDesc(void){
 
 nodo *criaNodo(int chave){
 	nodo *novoNodo;
-	novoNodo = (nodo*) malloc(sizeof(nodo));
+	novoNodo = calloc(1, sizeof(nodo));
 	novoNodo->chave = chave;
 	novoNodo->esquerdo=NULL;
 	novoNodo->direito=NULL;
@@ -24,23 +24,74 @@ nodo *insereNodo(nodo *atual, nodo *novoNodo, nodo *pai){
 	if(atual == NULL){
 		novoNodo->pai = pai;
 		return novoNodo;
-		printf("\nInserção concluída! (pai)");
-
-	}
-	if(novoNodo->chave  > atual->chave){
-		novoNodo->rot--;
-		atual->direito = insereNodo(atual->direito, novoNodo, atual);
-		printf("\nInserção concluída!");
-
 	}
 	else{
-		novoNodo->rot++;
-		atual->esquerdo = insereNodo(atual->esquerdo,novoNodo, atual);
-		printf("\nInserção concluída!");
-
+			if(novoNodo->chave  > atual->chave){
+				atual->direito = insereNodo(atual->direito, novoNodo, atual);
+			}
+			else{
+				atual->esquerdo = insereNodo(atual->esquerdo,novoNodo, atual);
+			}
 	}
-	
 	return atual;	
+}
+
+nodo *removeChave(nodo *atual, int chave){
+	
+	if(atual == NULL)
+		return NULL;
+	
+	if(atual->chave == chave){
+		printf("Chave encontrada!");
+		if((atual->direito == NULL) && (atual->esquerdo == NULL)){ //folha
+			printf("\nFolha removida.");
+			free(atual);
+			return NULL;
+		}
+		else{
+			if(atual->direito == NULL){ //apenas filho esquerdo
+				printf("\nApenas filho esquerdo.");
+				nodo *temp = atual->esquerdo;
+				temp->pai = atual->pai;
+				free(atual);
+				return temp;
+			}
+			else if(atual->esquerdo == NULL){ //apenas filho direito
+				printf("\nApenas filho direito.");
+				nodo *temp = atual->direito;
+				temp->pai = atual->pai;
+				free(atual);
+				return temp;
+			}	
+			else if((atual->direito != NULL) && (atual->esquerdo != NULL)){ //dois filhos
+				//AINDA NÃO FIZ 
+			}
+		}
+		return atual;
+	}
+	else{
+		if(chave > atual->chave){
+			atual->direito = removeChave(atual->direito, chave);
+		}
+		else{
+			atual->esquerdo = removeChave(atual->esquerdo, chave);
+		}	
+	}
+	atual = balanceamento(atual); 
+	return atual;
+}
+
+int Maior(int a, int b){
+    return (a>b) ? a : b;
+}
+
+int altura(nodo *raiz){
+   if(raiz == NULL){
+        return 0;
+   }
+   else{
+        return 1 + Maior(altura(raiz->esquerdo), altura(raiz->direito));
+    }
 }
 
 nodo *balanceamento(nodo *raiz){
@@ -49,25 +100,98 @@ nodo *balanceamento(nodo *raiz){
 	if(raiz != NULL){
 		raiz->esquerdo = balanceamento(raiz->esquerdo);
 		raiz->direito = balanceamento(raiz->direito);
+		raiz->rot = altura(raiz->esquerdo) - altura(raiz->direito);
 		if((raiz->rot == 2) || (raiz->rot == -2)){
-			printf("Pre order: ");
+			printf("\nPre order: ");
 			Preorder(raiz);
 			
-			if((raiz->rot>0)&&(raiz->esquerdo->rot>0)){ //rot_dir
+			if((raiz->rot > 0) && (raiz->esquerdo->rot > 0)){ //rot_dir
 				if(raiz->pai != NULL)
 					raiz->pai->rot--;
-				printf("Rotação a direita do nó %d\n", raiz->chave);
-				aux = raiz->direito;
+				printf("\nRotação a direita do nó %d\n", raiz->chave);
+				aux = raiz->esquerdo;
 				raiz->esquerdo = aux->direito;
 				if(aux->direito != NULL)
 					aux->direito->pai = raiz;
 				aux->direito = raiz;
 				aux->pai = raiz->pai;
-				raiz->rot = 0;
+				raiz->pai = aux;
 				raiz = aux;
+				raiz->rot = altura(raiz->esquerdo) - altura(raiz->direito);
+			}
+			else{
+				if((raiz->rot < 0) && (raiz->direito->rot < 0)){ //rot_esq
+					if(raiz->pai != NULL)
+						raiz->pai->rot--;
+					printf("\nRotação a esquerda do nó %d\n", raiz->chave);
+					aux = raiz->direito;
+					raiz->direito = aux->esquerdo;
+					if(aux->esquerdo != NULL)
+						aux->esquerdo->pai = raiz;
+					aux->esquerdo = raiz;
+					aux->pai = raiz->pai;
+					raiz->pai = aux;
+					raiz = aux;
+					raiz->rot = altura(raiz->esquerdo) - altura(raiz->direito);
+				}
+				else{
+				//falta ajustar os pais
+                    if((raiz->rot > 0)&&(raiz->esquerdo->rot < 0)){ //rot_dupla_dir
+						if(raiz->pai != NULL)
+							raiz->pai->rot--;
+						printf("\nRotação dupla a direita do nó %d\n", raiz->chave);
+                        aux = raiz->esquerdo;
+                        aux2 = aux->direito;
+                        aux->direito = aux2->esquerdo;
+                        aux2->esquerdo = aux;
+                        raiz->esquerdo = aux2->direito;
+                        aux2->direito = raiz;
+                        if(aux2->rot == -1){
+                            raiz->rot = 1;
+                        }
+                        else{
+                            raiz->rot = 0;
+                        }
+                        if(aux2->rot == 1){
+                            aux->rot = -1;
+                        }
+                        else{
+                            aux->rot = 0;
+                        }
+                        raiz = aux2;
+                   }
+                   else{
+					   if((raiz->rot < 0)&&(raiz->direito->rot > 0)){ //rot_dupla_esq
+							if(raiz->pai != NULL)
+								raiz->pai->rot++;
+							printf("\nRotação dupla a esquerda do nó %d\n", raiz->chave);
+                            aux = raiz->direito;
+                            aux2 = aux->esquerdo;
+                            aux->esquerdo = aux2->direito;
+                            aux2->direito = aux;
+                            raiz->direito = aux2->esquerdo;
+                            aux2->esquerdo = raiz;
+                            if(aux2->rot == -1){
+                                raiz->rot = 1;
+                            }
+                            else{
+                                raiz->rot = 0;
+                            }
+                            if(aux2->rot == 1){
+                                aux->rot = -1;
+                            }
+                            else{
+                                aux->rot = 0;
+                            }
+                            raiz = aux2;   
+                      }
+				   }
+				}
 			}
 		}
+		return raiz;
 	}
+		return NULL;
 }
 
 void *Inorder(nodo *raiz){
@@ -80,7 +204,7 @@ void *Inorder(nodo *raiz){
 
 void *Preorder(nodo *raiz){
 	if(raiz != NULL){
-		printf("%d ", raiz->chave);
+		printf("\n|%d| ", raiz->chave);
 		Inorder(raiz->esquerdo);
 		Inorder(raiz->direito);
 	}

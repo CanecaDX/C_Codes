@@ -5,6 +5,8 @@
 int main(){
 	
 descritorAVL *avlTree = NULL;
+nodo *novo = NULL;
+nodo *rem = NULL;
 int chave = 0, op = 1;
 
 while(op != 0){
@@ -29,13 +31,18 @@ while(op != 0){
 			case 2:
 				printf("\nInsira a chave para inserir na arvore: ");
 				scanf("%d", &chave);
-				nodo *novo = criaNodo(chave);
-				avlTree->raiz = insereNodo(avlTree->raiz,novo,avlTree->raiz);
+				novo = criaNodo(chave);
+				avlTree->raiz = insereNodo(avlTree->raiz,novo, NULL);
 				avlTree->raiz = balanceamento(avlTree->raiz);
 				printf("\nValor adicionado com sucesso");
 				break;
 			case 3:
-				//remocao
+				printf("\nInsira a chave que deseja remover da arvore: ");
+				scanf("%d", &chave);
+				avlTree->raiz = removeChave(avlTree->raiz, chave);
+				printf("\nChave removida: %d", chave);
+				printf("\nPre order: ");
+				Preorder(raiz);
 				break;
 			case 4:
 				int op2 = 1;

@@ -18,7 +18,10 @@ typedef struct{
 descritorAVL *alocaDesc(void);
 nodo *criaNodo(int chave);
 nodo *insereNodo(nodo *atual, nodo *novoNodo, nodo *pai);
-nodo *balanceamente(nodo *raiz);
+nodo *removeChave(nodo *atual, int chave);
+int Maior(int a, int b);
+int altura(nodo *raiz);
+nodo *balanceamento(nodo *raiz);
 void *Inorder(nodo *raiz);
 void *Preorder(nodo *raiz);
 void *Posorder(nodo *raiz);
