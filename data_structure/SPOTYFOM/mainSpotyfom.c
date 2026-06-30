@@ -1,3 +1,6 @@
+// Leonardo Manzke 2510101130
+// leonardomanzke.aluno@unipampa.edu.br
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

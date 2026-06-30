@@ -43,7 +43,7 @@ int main(){
 				printf("Que posicao deseja inserir na lista? ");
 				setbuf(stdin, NULL);
 				scanf("%d", &pos);
-				insere(lista, elemento, pos);
+					insere(lista, elemento, pos);
 				printf("Música inserida na lista.");
 				break;
 			case 3:

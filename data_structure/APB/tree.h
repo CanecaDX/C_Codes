@@ -14,9 +14,10 @@ typedef struct{
 	nodo *raiz;
 }descritorTree;
 
-descritorAVL *alocaDesc(void);
+descritorTree *alocaDesc(void);
 nodo *criaNodo(int chave);
 nodo *insereNodo(nodo *atual, nodo *novoNodo, nodo *pai);
+nodo *removeNodo(nodo *atual, int chave);
 void *Inorder(nodo *raiz);
 void *Preorder(nodo *raiz);
 void *Posorder(nodo *raiz);

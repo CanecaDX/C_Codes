@@ -26,7 +26,7 @@ nodo *insereNodo(nodo *atual, nodo *novoNodo, nodo *pai){
 		return novoNodo;
 	}
 	else{
-			if(novoNodo->chave  > atual->chave){
+			if(novoNodo->chave  >= atual->chave){
 				atual->direito = insereNodo(atual->direito, novoNodo, atual);
 			}
 			else{
@@ -219,16 +219,16 @@ void *Inorder(nodo *raiz){
 
 void *Preorder(nodo *raiz){
 	if(raiz != NULL){
-		printf("\n|%d| ", raiz->chave);
-		Inorder(raiz->esquerdo);
-		Inorder(raiz->direito);
+		printf("|%d| ", raiz->chave);
+		Preorder(raiz->esquerdo);
+		Preorder(raiz->direito);
 	}
 }
 
 void *Posorder(nodo *raiz){
 	if(raiz != NULL){
-		Inorder(raiz->esquerdo);
-		Inorder(raiz->direito);
+		Posorder(raiz->esquerdo);
+		Posorder(raiz->direito);
 		printf("%d ", raiz->chave);
 	}
 }

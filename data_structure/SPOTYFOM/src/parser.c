@@ -23,11 +23,9 @@ void carregaArquivo(char nome[256], descritorS *listaSE){
             musica *song = (musica*)malloc (sizeof(musica));
             nodoS *elemento = NULL;
             
-            line[strcspn(line, "\n\r")] = '\0';
-            char copia[512];
-			strcpy(copia, line);
+            line[strcspn(line, "\n\r")] = '\0'; //pega a linha até o limitador
             
-			strcpy(song->artista, strtok(copia, ";"));
+			strcpy(song->artista, strtok(line, ";"));
 			song->codigo = atoi(strtok(NULL, ";"));
 			strcpy(song->titulo, strtok(NULL, ";"));
 			strcpy(song->letra, strtok(NULL, ";"));
@@ -63,10 +61,8 @@ void carregaBackup(char nome[256], descritorS *listaSE){
             nodoS *elemento = NULL;
             
             line[strcspn(line, "\n\r")] = '\0';
-            char copia[512];
-			strcpy(copia, line);
             
-			strcpy(song->artista, strtok(copia, ";"));
+			strcpy(song->artista, strtok(linha, ";"));
 			song->codigo = atoi(strtok(NULL, ";"));
 			strcpy(song->titulo, strtok(NULL, ";"));
 			strcpy(song->letra, strtok(NULL, ";"));
